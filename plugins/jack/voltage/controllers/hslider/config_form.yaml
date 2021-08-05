@@ -1,0 +1,10 @@
+name: Hslider
+form: $/jack/voltage/models/homeslider/fields.yaml
+modelClass: Jack\Voltage\Models\Homeslider
+defaultRedirect: jack/voltage/hslider
+create:
+    redirect: 'jack/voltage/hslider/update/:id'
+    redirectClose: jack/voltage/hslider
+update:
+    redirect: jack/voltage/hslider
+    redirectClose: jack/voltage/hslider

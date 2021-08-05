@@ -1,0 +1,11 @@
+fields:
+    number:
+        label: Number
+        oc.commentPosition: ''
+        span: auto
+        type: number
+    details:
+        label: Details
+        span: auto
+        oc.commentPosition: ''
+        type: text

@@ -1,0 +1,94 @@
+.content-portfolio-detail
+	padding-bottom: 70px
+	margin-bottom: 30px
+
+	.content-portfolio-detail-item
+		text-align: center
+		img
+			display: inline-block
+	&.owl-carousel
+		&:hover,
+		&:focus
+			.owl-next
+				width: 175px !important
+
+	.owl-next
+		height: 130px !important
+		background: $color-primary !important
+		&:before
+			content: ''
+			position: absolute
+			top: 45%
+			left: 32%
+			background-image: url(../images/images-sprite.png)
+			background-position: -209px -93px
+			width: 24px
+			height: 14px
+			display: inline-block 
+
+		&:after
+			margin-top: 0 !important
+			left: 60% !important
+
+	.owl-page
+		background-color: darken(white, 10%)
+		margin:
+			left: 8px
+			right: 8px
+		&.active
+			background-color: $color-primary
+
+.page-isotope
+	height: 238px
+	@include max1200
+		display: none
+	.isotope-item
+		padding: 0 !important
+	.width
+		&-1,
+		&-2,
+		&-3
+			float: left
+			height: 238px !important
+			overflow: hidden
+			img
+				min-height: 238px !important
+		&-1
+			width: 30% !important
+		&-2
+			width: 50% !important
+		&-3
+			width: 20% !important
+
+
+.owl-carousel
+	&.custom-content-casestudy-rwd
+		margin:
+			bottom: 60px
+		padding-bottom: 45px
+		.portfolio-item
+			max-width: 580px
+			margin:
+				left: auto
+				right: auto
+
+		.owl-page
+			background-color: darken(white, 10%)
+			margin:
+				left: 8px
+				right: 8px
+			&.active
+				background-color: $color-primary
+
+		.owl-pagination
+			bottom: 0
+
+
+// for grid version
+.portfolio-item
+	&.grid
+		&.col-md-3
+			margin-bottom: 30px
+			@include max991
+				width: (100%/2) 
+				float: left

@@ -1,0 +1,86 @@
+$height: 332px
+$width: 15%
+
+.isotope-lp
+	position: relative
+	width: 100%
+	height: 996px 
+	@include max1440
+		height: 840px
+
+	&-inner
+		height: 332px !important
+
+		@include max1440
+			height: 280px !important
+		.portfolio-item
+			@include max991
+				width: (100%/3) !important
+			&.seven
+				left: initial !important
+				right: 0 !important
+				width: 15% !important
+				top: 0 !important
+
+	.portfolio-item
+		width: $width
+		height: $height
+		background: darken(white, 10%)
+		float: left
+		margin: 0
+		padding: 0
+		overflow: hidden
+		@include max1440
+			height: 280px
+			
+		img
+			min-width: 300px
+			min-height: 336px
+			@include max1440
+				min-height: 286px
+		&.w50
+			width: 20%
+		&.w2
+			width: 35%
+		&.w3
+			width: 50%
+		&.h2
+			height: 664px
+			@include max1440
+				height: 560px
+			img
+				min-height: 664px
+				min-width: 390px
+		&.one
+		&.two
+		&.three
+		&.four
+			position: absolute
+			left: 0
+			top: 332px
+			@include max1440
+				top: 280px
+		&.five
+			position: absolute
+			left: 0
+			top: 664px
+			@include max1440
+				top: 560px
+		&.six
+			position: absolute
+			left: 50% 
+			top: 332px
+			@include max1440
+				top: 280px
+		&.seven
+			position: absolute
+			left: 65%
+			top: 332px
+			@include max1440
+				top: 280px
+		&.eight
+			position: absolute
+			right: 0
+			top: 664px
+			@include max1440
+				top: 560px

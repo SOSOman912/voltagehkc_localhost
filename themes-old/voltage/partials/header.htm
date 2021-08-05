@@ -1,0 +1,32 @@
+==
+{% partial 'head' %}
+<body>
+     
+    <div id="main-container">
+
+        <!-- HEADER -->
+        <header id="header" class="header-style-two">
+            
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-3">
+
+                        <!-- LOGO -->
+                        <div id="logo">
+                            <a href="{{'home' | page}}">
+                                <img src="{{ 'assets/images/logo.png'|theme }}" alt="" class="logo-light">
+                                <img src="{{ 'assets/images/logo-dark.png'|theme }}" alt="" class="logo-dark">
+                            </a>
+                        </div><!-- LOGO -->    
+                    </div><!-- col -->
+
+                    <div class="col-sm-9">
+                        <!-- MENU --> 
+                        <nav>
+                            {% partial 'nav' %}
+                        </nav>
+                    </div><!-- col -->
+                </div><!-- row -->
+            </div><!-- container -->    
+                    
+        </header><!-- HEADER -->

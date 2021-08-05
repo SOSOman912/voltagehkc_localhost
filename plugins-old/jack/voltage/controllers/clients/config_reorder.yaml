@@ -1,0 +1,4 @@
+title: Clients
+modelClass: Jack\Voltage\Models\Client
+toolbar:
+    buttons: reorder_toolbar

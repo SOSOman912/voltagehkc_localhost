@@ -1,0 +1,381 @@
+1628069881a:1:{s:15:"blog-detail.htm";a:9:{s:8:"fileName";s:15:"blog-detail.htm";s:7:"content";s:6027:"title = "blog detail"
+url = "/blog/post/:slug"
+is_hidden = 0
+
+[blogPost]
+slug = "{{ :slug }}"
+categoryPage = "blog-list"
+==
+<?php
+function onEnd()
+{
+    // Optional - set the page title to the post title
+    // var_dump($this['post']);
+    if (isset($this->post->title)){
+        $this->page->title = $this['post']->title;
+        $this['imageCount'] = count($this['post']->featured_images);
+    }else{
+        header('Location: https://www.voltagehk.com/404');
+    }
+}
+
+public function nextPost($post) {
+
+    // get current cats
+    // $postCats = $post->categories->pluck('id')->toArray();
+
+    // Here you need to pass it as we are 
+    // hardcoding category slug in URL so we have no data of category
+
+    // IF YOU DONT WANT CAT COME FROM POST
+    // YOU CAN HARD CODE THEM $postCats = ['2'] 
+    // here 2 is id of category
+
+    // use this cats to scope 
+    $nextPost = $post->isPublished()->applySibling(-1)->first();
+    
+    // check if next is not availabe then return false
+    if(!$nextPost) {        
+        return false;
+    }
+
+    // create page link here same page
+    $postPage = $this->page->getBaseFileName();
+
+    // set URl so we can direct access .url
+    $nextPost->setUrl($postPage, $this->controller);
+
+    // set Cat URl so we can use it directly if needed
+    $nextPost->categories->each(function($category) {
+        $category->setUrl($this->categoryPage, $this->controller);
+    });
+
+    return $nextPost;
+
+}
+
+public function previousPost($post) {
+
+    // get current cats
+    // $postCats = $post->categories->pluck('id')->toArray();
+
+    // IF YOU DONT WANT CAT COME FROM POST
+    // YOU CAN HARD CODE THEM $postCats = ['2'] 
+    // here 2 is id of category
+
+    // use this cats to scope 
+    $prevPost = $post->isPublished()->applySibling(1)->first();
+
+    // check if nprevious ext is not availabe then return false
+    if(!$prevPost) {        
+        return false;
+    }
+
+    // create page link here same page
+    $postPage = $this->page->getBaseFileName();
+
+    // set URl so we can direct access .url
+    $prevPost->setUrl($postPage, $this->controller);
+
+    // set Cat URl so we can use it directly if needed
+    $prevPost->categories->each(function($category) {
+        $category->setUrl($this->categoryPage, $this->controller);
+    });
+
+    return $prevPost;
+
+}
+?>
+==
+{% partial 'header2' %}
+<style>
+#main-container{
+    background-color: #fff;
+}
+</style>
+
+<div id="page-content" style='background-color: #fff;'>
+
+{% if post.title %}
+    {% set previousPostRecord = this.controller.pageObject.previousPost(post) %}
+	{% set nextPostRecord = this.controller.pageObject.nextPost(post) %}
+    
+    <div class="mt106 {{ imageCount > 1 ? 'owl-carousel custom-content content-portfolio-detail' : '' }} mb0">
+      {% for image in post.featured_images %}
+      <section class="content-portfolio-detail-item">
+      	<img src="{{ image.path }}" style='width:100%'>
+	  </section>
+	  {% endfor %}
+	</div>
+	
+	<div class="container">
+        <div class="row">
+			<div class="col-sm-12">
+				<ol class="breadcrumb custom-breadcrumbs mt30 mb60">
+					<li>
+						<a href="{{ 'home' | page }}">Home</a>
+					</li>
+					<li>
+						<a href="{{ 'blog-list' | page }}">Blog</a>
+					</li>
+					<li class="active">{{ post.title }}</li>
+				</ol>
+			</div>
+		</div>
+	</div>
+	
+	<div class="container">
+		<div class="row">
+		    <div class="col-md-8 col-md-offset-2">
+				<h3 class='mb60 textupper'>{{ post.title }}</h3>
+				<p>{{ post.content_html|raw }}</p>
+				
+				<div class='qcontact'>
+				    <div class="blog-previous-next">
+				        <div class="blog-previous">
+        					{% if previousPostRecord %}
+					        <div class="arrow-icon"><a href="{{ previousPostRecord.url }}"><img src="/storage/app/media/icon-previous.png" /></a></div>
+					        <div class="blog-featured-image">
+					            <div class="figure">
+    					            <a href="{{ previousPostRecord.url }}">
+                                        <img src="{{ previousPostRecord.featured_images[0].path }}">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="blog-title"><a href="{{ previousPostRecord.url }}">{{ previousPostRecord.title }}</a></div>
+                            {% endif %}
+                        </div>
+                        <div class="blog-next">
+                        	{% if nextPostRecord %}
+                            <div class="blog-featured-image">
+                                <div class="figure">
+                                    <a href="{{ nextPostRecord.url }}">
+                                        <img src="{{ nextPostRecord.featured_images[0].path }}">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="blog-title"><a href="{{ nextPostRecord.url }}">{{ nextPostRecord.title }}</a></div>
+                            <div class="arrow-icon"><a href="{{ nextPostRecord.url }}"><img src="/storage/app/media/icon-next.png" /></a></div>
+                            {% endif %}
+                        </div>
+                    </div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% else %}
+    <div class="mt106 mb0">
+	</div>
+	
+	<div class="container">
+        <div class="row">
+			<div class="col-sm-12">
+				<ol class="breadcrumb custom-breadcrumbs mt30 mb60">
+					<li>
+						<a href="{{ 'home' | page }}">Home</a>
+					</li>
+					<li>
+						<a href="{{ 'blog-list' | page }}">Blog</a>
+					</li>
+				</ol>
+			</div>
+		</div>
+	</div>
+	
+	<div class="container">
+		<div class="row">
+		    <div class="col-md-8 col-md-offset-2">
+		    <h2 style="    margin: 0 0 70px 0;
+    text-align: center;">Post Not Found</h2>
+			</div>
+		</div>
+	</div>
+{% endif %}
+
+</div>
+
+{% partial 'footer' %}";s:5:"mtime";i:1592904050;s:6:"markup";s:3636:"{% partial 'header2' %}
+<style>
+#main-container{
+    background-color: #fff;
+}
+</style>
+
+<div id="page-content" style='background-color: #fff;'>
+
+{% if post.title %}
+    {% set previousPostRecord = this.controller.pageObject.previousPost(post) %}
+	{% set nextPostRecord = this.controller.pageObject.nextPost(post) %}
+    
+    <div class="mt106 {{ imageCount > 1 ? 'owl-carousel custom-content content-portfolio-detail' : '' }} mb0">
+      {% for image in post.featured_images %}
+      <section class="content-portfolio-detail-item">
+      	<img src="{{ image.path }}" style='width:100%'>
+	  </section>
+	  {% endfor %}
+	</div>
+	
+	<div class="container">
+        <div class="row">
+			<div class="col-sm-12">
+				<ol class="breadcrumb custom-breadcrumbs mt30 mb60">
+					<li>
+						<a href="{{ 'home' | page }}">Home</a>
+					</li>
+					<li>
+						<a href="{{ 'blog-list' | page }}">Blog</a>
+					</li>
+					<li class="active">{{ post.title }}</li>
+				</ol>
+			</div>
+		</div>
+	</div>
+	
+	<div class="container">
+		<div class="row">
+		    <div class="col-md-8 col-md-offset-2">
+				<h3 class='mb60 textupper'>{{ post.title }}</h3>
+				<p>{{ post.content_html|raw }}</p>
+				
+				<div class='qcontact'>
+				    <div class="blog-previous-next">
+				        <div class="blog-previous">
+        					{% if previousPostRecord %}
+					        <div class="arrow-icon"><a href="{{ previousPostRecord.url }}"><img src="/storage/app/media/icon-previous.png" /></a></div>
+					        <div class="blog-featured-image">
+					            <div class="figure">
+    					            <a href="{{ previousPostRecord.url }}">
+                                        <img src="{{ previousPostRecord.featured_images[0].path }}">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="blog-title"><a href="{{ previousPostRecord.url }}">{{ previousPostRecord.title }}</a></div>
+                            {% endif %}
+                        </div>
+                        <div class="blog-next">
+                        	{% if nextPostRecord %}
+                            <div class="blog-featured-image">
+                                <div class="figure">
+                                    <a href="{{ nextPostRecord.url }}">
+                                        <img src="{{ nextPostRecord.featured_images[0].path }}">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="blog-title"><a href="{{ nextPostRecord.url }}">{{ nextPostRecord.title }}</a></div>
+                            <div class="arrow-icon"><a href="{{ nextPostRecord.url }}"><img src="/storage/app/media/icon-next.png" /></a></div>
+                            {% endif %}
+                        </div>
+                    </div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% else %}
+    <div class="mt106 mb0">
+	</div>
+	
+	<div class="container">
+        <div class="row">
+			<div class="col-sm-12">
+				<ol class="breadcrumb custom-breadcrumbs mt30 mb60">
+					<li>
+						<a href="{{ 'home' | page }}">Home</a>
+					</li>
+					<li>
+						<a href="{{ 'blog-list' | page }}">Blog</a>
+					</li>
+				</ol>
+			</div>
+		</div>
+	</div>
+	
+	<div class="container">
+		<div class="row">
+		    <div class="col-md-8 col-md-offset-2">
+		    <h2 style="    margin: 0 0 70px 0;
+    text-align: center;">Post Not Found</h2>
+			</div>
+		</div>
+	</div>
+{% endif %}
+
+</div>
+
+{% partial 'footer' %}";s:4:"code";s:2254:"function onEnd()
+{
+    // Optional - set the page title to the post title
+    // var_dump($this['post']);
+    if (isset($this->post->title)){
+        $this->page->title = $this['post']->title;
+        $this['imageCount'] = count($this['post']->featured_images);
+    }else{
+        header('Location: https://www.voltagehk.com/404');
+    }
+}
+
+public function nextPost($post) {
+
+    // get current cats
+    // $postCats = $post->categories->pluck('id')->toArray();
+
+    // Here you need to pass it as we are 
+    // hardcoding category slug in URL so we have no data of category
+
+    // IF YOU DONT WANT CAT COME FROM POST
+    // YOU CAN HARD CODE THEM $postCats = ['2'] 
+    // here 2 is id of category
+
+    // use this cats to scope 
+    $nextPost = $post->isPublished()->applySibling(-1)->first();
+    
+    // check if next is not availabe then return false
+    if(!$nextPost) {        
+        return false;
+    }
+
+    // create page link here same page
+    $postPage = $this->page->getBaseFileName();
+
+    // set URl so we can direct access .url
+    $nextPost->setUrl($postPage, $this->controller);
+
+    // set Cat URl so we can use it directly if needed
+    $nextPost->categories->each(function($category) {
+        $category->setUrl($this->categoryPage, $this->controller);
+    });
+
+    return $nextPost;
+
+}
+
+public function previousPost($post) {
+
+    // get current cats
+    // $postCats = $post->categories->pluck('id')->toArray();
+
+    // IF YOU DONT WANT CAT COME FROM POST
+    // YOU CAN HARD CODE THEM $postCats = ['2'] 
+    // here 2 is id of category
+
+    // use this cats to scope 
+    $prevPost = $post->isPublished()->applySibling(1)->first();
+
+    // check if nprevious ext is not availabe then return false
+    if(!$prevPost) {        
+        return false;
+    }
+
+    // create page link here same page
+    $postPage = $this->page->getBaseFileName();
+
+    // set URl so we can direct access .url
+    $prevPost->setUrl($postPage, $this->controller);
+
+    // set Cat URl so we can use it directly if needed
+    $prevPost->categories->each(function($category) {
+        $category->setUrl($this->categoryPage, $this->controller);
+    });
+
+    return $prevPost;
+
+}";s:5:"title";s:11:"blog detail";s:3:"url";s:16:"/blog/post/:slug";s:9:"is_hidden";s:1:"0";s:8:"blogPost";a:2:{s:4:"slug";s:11:"{{ :slug }}";s:12:"categoryPage";s:9:"blog-list";}}}

@@ -1,0 +1,191 @@
+1628092512a:1:{s:13:"blog-list.htm";a:9:{s:8:"fileName";s:13:"blog-list.htm";s:7:"content";s:3919:"title = "blog"
+url = "/blog"
+is_hidden = 0
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+postsPerPage = 10000
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = "blog-list"
+postPage = "blog-detail"
+==
+{% partial 'header2' %}
+
+    <div id="page-content">
+        <div class="clearfix space120 hidden-991"></div>
+        <div class="clearfix space60 hidden-991"></div>
+
+        <div class=" hidden-only-480 clearfix space30 showin-991"></div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    
+                    <ol class="breadcrumb custom-breadcrumbs">
+                        <li><a href="#">Home</a></li>
+                        <li class="active">Blog</li>
+                    </ol>
+
+                </div>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    
+                    <div class="headline mb-60">
+                        <h3>Blog</h3>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 blog-list">
+                
+                    {% set posts = blogPosts.posts %}
+
+                    {% for post in posts %}
+                    <div class="blog-article">
+                        <div class="blog-article-thumbnail"> 
+                            <div class="figure">
+                                <a href="{{ post.url }}">
+                                    <img src="{{ post.featured_images[0].path }}" >
+                                </a>
+                            </div>
+                        </div><!-- blog-article-thumbnail -->
+                        
+                        <div class="blog-article-details">
+                            
+                            <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+                            
+                            <p>
+                                <span class="text-blue">{{ post.published_at|date('M d, Y') }}</span>
+                                <!-- &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</span>in <a href="#">Design</a> -->
+                            </p>
+                                                               
+                        </div><!-- blog-article-details -->
+                        
+                    </div><!-- blog-article -->
+                    {% endfor %}
+                    
+                    
+                    {% if posts.lastPage > 1 %}
+                        <ul class="pagination">
+                            {% if posts.currentPage > 1 %}
+                                <li><a href="{{ this.page.baseFileName|page({ (pageParam): (posts.currentPage-1) }) }}">&larr; Prev</a></li>
+                            {% endif %}
+                    
+                            {% for page in 1..posts.lastPage %}
+                                <li class="{{ posts.currentPage == page ? 'active' : null }}">
+                                    <a href="{{ this.page.baseFileName|page({ (pageParam): page }) }}">{{ page }}</a>
+                                </li>
+                            {% endfor %}
+                    
+                            {% if posts.lastPage > posts.currentPage %}
+                                <li><a href="{{ this.page.baseFileName|page({ (pageParam): (posts.currentPage+1) }) }}">Next &rarr;</a></li>
+                            {% endif %}
+                        </ul>
+                    {% endif %}
+                    <div class="loading"></div>
+                    <div class="loadmore"></div>
+                    <div class="clearfix space120 hidden-only-480"></div>
+                </div>
+            </div>
+        </div>
+
+    </div><!-- / PAGE CONTENT -->
+{% partial 'footer' %}";s:5:"mtime";i:1628069435;s:6:"markup";s:3694:"{% partial 'header2' %}
+
+    <div id="page-content">
+        <div class="clearfix space120 hidden-991"></div>
+        <div class="clearfix space60 hidden-991"></div>
+
+        <div class=" hidden-only-480 clearfix space30 showin-991"></div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    
+                    <ol class="breadcrumb custom-breadcrumbs">
+                        <li><a href="#">Home</a></li>
+                        <li class="active">Blog</li>
+                    </ol>
+
+                </div>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    
+                    <div class="headline mb-60">
+                        <h3>Blog</h3>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 blog-list">
+                
+                    {% set posts = blogPosts.posts %}
+
+                    {% for post in posts %}
+                    <div class="blog-article">
+                        <div class="blog-article-thumbnail"> 
+                            <div class="figure">
+                                <a href="{{ post.url }}">
+                                    <img src="{{ post.featured_images[0].path }}" >
+                                </a>
+                            </div>
+                        </div><!-- blog-article-thumbnail -->
+                        
+                        <div class="blog-article-details">
+                            
+                            <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+                            
+                            <p>
+                                <span class="text-blue">{{ post.published_at|date('M d, Y') }}</span>
+                                <!-- &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</span>in <a href="#">Design</a> -->
+                            </p>
+                                                               
+                        </div><!-- blog-article-details -->
+                        
+                    </div><!-- blog-article -->
+                    {% endfor %}
+                    
+                    
+                    {% if posts.lastPage > 1 %}
+                        <ul class="pagination">
+                            {% if posts.currentPage > 1 %}
+                                <li><a href="{{ this.page.baseFileName|page({ (pageParam): (posts.currentPage-1) }) }}">&larr; Prev</a></li>
+                            {% endif %}
+                    
+                            {% for page in 1..posts.lastPage %}
+                                <li class="{{ posts.currentPage == page ? 'active' : null }}">
+                                    <a href="{{ this.page.baseFileName|page({ (pageParam): page }) }}">{{ page }}</a>
+                                </li>
+                            {% endfor %}
+                    
+                            {% if posts.lastPage > posts.currentPage %}
+                                <li><a href="{{ this.page.baseFileName|page({ (pageParam): (posts.currentPage+1) }) }}">Next &rarr;</a></li>
+                            {% endif %}
+                        </ul>
+                    {% endif %}
+                    <div class="loading"></div>
+                    <div class="loadmore"></div>
+                    <div class="clearfix space120 hidden-only-480"></div>
+                </div>
+            </div>
+        </div>
+
+    </div><!-- / PAGE CONTENT -->
+{% partial 'footer' %}";s:4:"code";N;s:5:"title";s:4:"blog";s:3:"url";s:5:"/blog";s:9:"is_hidden";s:1:"0";s:9:"blogPosts";a:6:{s:10:"pageNumber";s:11:"{{ :page }}";s:12:"postsPerPage";s:5:"10000";s:14:"noPostsMessage";s:14:"No posts found";s:9:"sortOrder";s:17:"published_at desc";s:12:"categoryPage";s:9:"blog-list";s:8:"postPage";s:11:"blog-detail";}}}

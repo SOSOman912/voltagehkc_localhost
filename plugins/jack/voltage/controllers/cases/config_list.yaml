@@ -1,0 +1,11 @@
+list: $/jack/voltage/models/case2/columns.yaml
+modelClass: Jack\Voltage\Models\Case2
+title: Cases
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'jack/voltage/cases/update/:id'

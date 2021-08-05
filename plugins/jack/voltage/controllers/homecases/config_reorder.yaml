@@ -1,0 +1,4 @@
+title: Homecases
+modelClass: Jack\Voltage\Models\Homecase
+toolbar:
+    buttons: reorder_toolbar

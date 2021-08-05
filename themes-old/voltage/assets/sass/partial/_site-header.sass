@@ -1,0 +1,77 @@
+#header-sticky
+	box-shadow: 0 5px 30px 0 rgba(black, .2)
+.menu,
+#logo
+	margin:
+		top: 10px
+
+	@include max991
+		margin:
+			top: 5px
+			bottom: 10px
+		padding-top: 0px
+	@include max767
+		margin-top: 25px
+	@include max480
+		margin-top: 30px
+
+.menu
+	li
+		a
+			font:
+				family: $gotham-black
+				size: 12px
+			&:hover,
+			&:focus
+				color: $color-primary
+	> li
+		> a
+			margin: 0 20px
+
+
+// header-style-two
+.header-style-two
+	.menu
+		li
+			a
+				color: white
+				&:hover,
+				&:focus
+					color: $color-primary
+	#logo
+		img
+			transition: all 250ms ease
+			margin-top: 0 !important
+			&.logo-dark
+				opacity: 0
+				visibility: hidden
+		.logo-light
+			@include max991
+				opacity: 0
+				visibility: hidden
+				height: 0
+		.logo-dark
+			@include max991
+				opacity: 1 !important
+				visibility: visible !important
+				height: initial
+
+	+ .header-sticky
+		#logo
+			.logo-light
+				opacity: 0
+				visibility: hidden
+				height: 0
+			.logo-dark
+				opacity: 1
+				visibility: visible
+
+#mobile-menu-button
+	background-color: $color-primary
+	border-radius: 0 !important
+
+#mobile-menu
+	background-color: $color-primary
+	li
+		a
+			font-size: 12px

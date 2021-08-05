@@ -1,0 +1,16 @@
+fields:
+    image:
+        label: 'Image (800px*500px)'
+        oc.commentPosition: ''
+        mode: file
+        span: auto
+        type: mediafinder
+    link:
+        label: Link
+        oc.commentPosition: ''
+        span: auto
+        type: text
+    enable:
+        label: 'Enable?'
+        span: auto
+        type: checkbox

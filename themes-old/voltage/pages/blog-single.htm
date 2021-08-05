@@ -1,0 +1,71 @@
+title = "blog single"
+url = "/blog-single/:slug"
+is_hidden = 0
+
+[blogPost]
+slug = "{{ :slug }}"
+categoryPage = "blog-list"
+==
+<?php
+function onEnd(){
+
+    $this->page->title = $this['post']->title;
+    
+}
+?>
+==
+{% partial 'header2' %}
+
+
+{% set post = blogPost.post %}
+
+        <div id="page-content">
+            <div class="clearfix space120 hidden-991"></div>
+            <div class="clearfix space60 hidden-991"></div>
+
+            <div class="clearfix space30 showin-991"></div>
+            
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-9">
+
+                        <div class="blog-article">
+
+                            <div class="blog-article-thumbnail"> 
+                            
+                                        {% for image in post.featured_images %}
+                                    
+                                                <img
+                                                    data-src="{{ image.filename }}"
+                                                    src="{{ image.path }}"
+                                                    alt="{{ image.description }}"
+                                                    />
+                                    
+                                        {% endfor %}                               
+
+                            </div><!-- blog-article-thumbnail -->
+                            
+                            <div class="blog-article-details">
+                                
+                                <h2>{{ post.title }}</h2>
+                                
+                                <p>
+                                    <span class="text-blue">{{ post.published_at|date('M d, Y') }}</span>
+                                </p>
+                                                                   
+                            </div><!-- blog-article-details -->
+                            
+                            {{ post.content_html|raw }}
+                            
+                            <div class="clearfix space30"></div>
+                            <p><a href="{{ 'blog-list' | page }}">< Back</a></p>
+                            
+                        </div><!-- blog-article -->
+
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- / PAGE CONTENT -->
+</body>
+{% partial 'footer' %}

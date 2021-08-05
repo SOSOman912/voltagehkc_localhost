@@ -1,0 +1,11 @@
+name: Homecases
+modelClass: Jack\Voltage\Models\Homecase
+form: $/jack/voltage/models/homecase/fields.yaml
+defaultRedirect: jack/voltage/homecases
+create:
+    redirect: 'jack/voltage/homecases/update/:id'
+    redirectClose: jack/voltage/homecases
+update:
+    redirect: jack/voltage/homecases
+    redirectClose: jack/voltage/homecases
+preview: {  }

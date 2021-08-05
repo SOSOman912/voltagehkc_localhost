@@ -1,0 +1,12 @@
+fields:
+    photo:
+        label: photo
+        oc.commentPosition: ''
+        mode: file
+        span: auto
+        type: mediafinder
+    text:
+        label: text
+        oc.commentPosition: ''
+        span: auto
+        type: text

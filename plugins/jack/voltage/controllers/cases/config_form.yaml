@@ -1,0 +1,10 @@
+name: Cases
+form: $/jack/voltage/models/case2/fields.yaml
+modelClass: Jack\Voltage\Models\Case2
+defaultRedirect: jack/voltage/cases
+create:
+    redirect: 'jack/voltage/cases/update/:id'
+    redirectClose: jack/voltage/cases
+update:
+    redirect: jack/voltage/cases
+    redirectClose: jack/voltage/cases

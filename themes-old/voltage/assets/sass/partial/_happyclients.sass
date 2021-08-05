@@ -1,0 +1,55 @@
+.happy-clients
+	border: 1px solid $color-dark
+	text-align: center
+	.headline
+		position: relative
+		background: white
+		z-index: 2
+		padding: 0 30px
+		top: -15px
+		display: inline-block
+		h3
+			z-index: 3
+
+	&-cta
+		position: relative
+		display: inline-block
+		// padding: 0 30px
+		bottom: -25px
+		background: white
+		.btn
+			margin-bottom: 0
+
+	&-list
+		list-style: none outside none
+		margin: 0
+			left: auto
+			right: auto
+		padding: 0
+		width: 80%
+		@include max767
+			text-align: center
+		li
+			width: (100%/6) 
+			float: left
+			margin: 0 15px 30px
+
+			@include max1200
+				width: (100%/4)
+
+			@include max767
+				width: (100%/3)
+				margin:
+					left: 0
+					right: 0
+				float: none
+				display: inline-block
+			img
+				width: 125px
+				height: 125px
+				display: inline-block
+				@include max767
+					width: initial
+					margin:
+						left: auto
+						right: auto

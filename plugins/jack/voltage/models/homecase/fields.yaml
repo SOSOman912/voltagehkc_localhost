@@ -1,0 +1,17 @@
+fields:
+    title:
+        label: Title
+        oc.commentPosition: ''
+        span: auto
+        type: text
+    photo:
+        label: 'Photo - id:1(470x280) | id:2,4,5(760x336) | id:3(390 x 664) | id:6(228x664) | id:7(304x336) | id:8(532x336)px'
+        oc.commentPosition: ''
+        mode: file
+        span: auto
+        type: mediafinder
+    link:
+        label: Hyperlink
+        span: auto
+        oc.commentPosition: ''
+        type: text

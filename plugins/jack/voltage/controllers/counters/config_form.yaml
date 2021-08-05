@@ -1,0 +1,10 @@
+name: Counters
+form: $/jack/voltage/models/counters/fields.yaml
+modelClass: Jack\Voltage\Models\Counters
+defaultRedirect: jack/voltage/counters
+create:
+    redirect: 'jack/voltage/counters/update/:id'
+    redirectClose: jack/voltage/counters
+update:
+    redirect: jack/voltage/counters
+    redirectClose: jack/voltage/counters

@@ -1,0 +1,233 @@
+1628069881a:1:{s:14:"what-we-do.htm";a:8:{s:8:"fileName";s:14:"what-we-do.htm";s:7:"content";s:4559:"title = "what we do"
+url = "/what-we-do"
+is_hidden = 0
+==
+<?php
+use Jack\Voltage\Models\Client;
+use Jack\Voltage\Models\Case2;
+use Jack\Voltage\Models\Testimonial;
+use Jack\Voltage\Models\Socialmedia;
+function onEnd(){
+
+    
+   // $theid =  $this->param('slug');
+    
+    $this['clients'] = Client::where('feature','1')->take(10)->orderby('id','asc')->get();
+    $this['cases'] = Case2::where('id','>',0)->orderBy('title','asc')->take(6)->get();
+    $this['testimonials'] = Testimonial::where('id','>','0')->get();
+}
+?>
+==
+{% partial 'header' %}
+
+        <div id="page-content">
+            
+         <!--   <div class="parallax nospace-bottom" data-stellar-background-ratio="0.2" id="page-header" style="background-image: url({{'assets/images/page-bg/2.jpg'|theme}});">-->
+       <!--         <div id="page-header" class="parallax nospace-bottom"  style="background-image: url({{'assets/images/page-bg/111.jpg'|theme}});">  -->
+                <div id="page-header" class="parallax nospace-bottom"  style="background-image: url({{'assets/images/page-bg/111.jpg'|theme}});"> 
+                 
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            
+                            <h2 class="page-header-title">What We Do</h2>
+                            
+                        </div><!-- col -->
+                    </div><!-- row -->
+                </div><!-- container -->    
+            </div><!-- page-header -->
+
+            <div class="container space-section"></div>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        
+                        <div class="headline mb-60">
+                            <h3>Public Relations | Digital Marketing | Influencer Marketing</h3>
+                            
+                        </div><!-- headline -->
+                    
+                    </div><!-- col -->
+                </div><!-- row -->
+            </div><!-- container -->
+
+             <div class="container">
+                <div class="row">
+                    
+                    {% partial 'whatwedo2' %}
+
+                </div>
+            </div>
+
+            <div class="container space-section"></div>
+            <div class="clearfix space30 showin-480"></div>
+
+               <section class="full-section dark-section" id="section-7">
+                
+                <div class="full-section-overlay-color black"></div>
+
+                <div class="full-section-container">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-offset-1 col-sm-10">
+
+                                 {% partial 'testimonials' %}
+                                
+                            </div>
+                        </div>
+                    </div>                    
+                </div>
+            </section>
+
+
+            
+   
+            <div class="clearfix space30 showin-480"></div>
+
+            <section class="full-section dark-section parallax" id="section-8" data-stellar-background-ratio="0.2" style="background-image: url({{'assets/images/section-bg/1.jpg'|theme}});">
+                <div class="full-section-overlay-color purple"></div>
+
+                <div class="full-section-container">
+                    
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                
+                                <div class="headline mb-45">
+                                    <h3>Case Study</h3>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-12">
+
+                                <div class="text-center">
+                                    <a href="{{ 'case-study' | page }}" class="btn btn-default-line btn-line-white btn-min-width">View All</a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section><!-- / .full-section -->
+
+        </div><!-- / PAGE CONTENT -->
+</body>
+{% partial 'footer' %}";s:5:"mtime";i:1589378170;s:6:"markup";s:4024:"{% partial 'header' %}
+
+        <div id="page-content">
+            
+         <!--   <div class="parallax nospace-bottom" data-stellar-background-ratio="0.2" id="page-header" style="background-image: url({{'assets/images/page-bg/2.jpg'|theme}});">-->
+       <!--         <div id="page-header" class="parallax nospace-bottom"  style="background-image: url({{'assets/images/page-bg/111.jpg'|theme}});">  -->
+                <div id="page-header" class="parallax nospace-bottom"  style="background-image: url({{'assets/images/page-bg/111.jpg'|theme}});"> 
+                 
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            
+                            <h2 class="page-header-title">What We Do</h2>
+                            
+                        </div><!-- col -->
+                    </div><!-- row -->
+                </div><!-- container -->    
+            </div><!-- page-header -->
+
+            <div class="container space-section"></div>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        
+                        <div class="headline mb-60">
+                            <h3>Public Relations | Digital Marketing | Influencer Marketing</h3>
+                            
+                        </div><!-- headline -->
+                    
+                    </div><!-- col -->
+                </div><!-- row -->
+            </div><!-- container -->
+
+             <div class="container">
+                <div class="row">
+                    
+                    {% partial 'whatwedo2' %}
+
+                </div>
+            </div>
+
+            <div class="container space-section"></div>
+            <div class="clearfix space30 showin-480"></div>
+
+               <section class="full-section dark-section" id="section-7">
+                
+                <div class="full-section-overlay-color black"></div>
+
+                <div class="full-section-container">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-offset-1 col-sm-10">
+
+                                 {% partial 'testimonials' %}
+                                
+                            </div>
+                        </div>
+                    </div>                    
+                </div>
+            </section>
+
+
+            
+   
+            <div class="clearfix space30 showin-480"></div>
+
+            <section class="full-section dark-section parallax" id="section-8" data-stellar-background-ratio="0.2" style="background-image: url({{'assets/images/section-bg/1.jpg'|theme}});">
+                <div class="full-section-overlay-color purple"></div>
+
+                <div class="full-section-container">
+                    
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                
+                                <div class="headline mb-45">
+                                    <h3>Case Study</h3>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-12">
+
+                                <div class="text-center">
+                                    <a href="{{ 'case-study' | page }}" class="btn btn-default-line btn-line-white btn-min-width">View All</a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section><!-- / .full-section -->
+
+        </div><!-- / PAGE CONTENT -->
+</body>
+{% partial 'footer' %}";s:4:"code";s:464:"use Jack\Voltage\Models\Client;
+use Jack\Voltage\Models\Case2;
+use Jack\Voltage\Models\Testimonial;
+use Jack\Voltage\Models\Socialmedia;
+function onEnd(){
+
+    
+   // $theid =  $this->param('slug');
+    
+    $this['clients'] = Client::where('feature','1')->take(10)->orderby('id','asc')->get();
+    $this['cases'] = Case2::where('id','>',0)->orderBy('title','asc')->take(6)->get();
+    $this['testimonials'] = Testimonial::where('id','>','0')->get();
+}";s:5:"title";s:10:"what we do";s:3:"url";s:11:"/what-we-do";s:9:"is_hidden";s:1:"0";}}

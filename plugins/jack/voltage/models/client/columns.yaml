@@ -1,0 +1,10 @@
+columns:
+    id:
+        label: id
+        type: number
+    created_at:
+        label: created_at
+        type: datetime
+    image:
+        label: image
+        type: text

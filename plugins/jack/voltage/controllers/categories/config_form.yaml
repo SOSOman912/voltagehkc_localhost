@@ -1,0 +1,10 @@
+name: Categories
+form: $/jack/voltage/models/category/fields.yaml
+modelClass: Jack\Voltage\Models\Category
+defaultRedirect: jack/voltage/categories
+create:
+    redirect: 'jack/voltage/categories/update/:id'
+    redirectClose: jack/voltage/categories
+update:
+    redirect: jack/voltage/categories
+    redirectClose: jack/voltage/categories

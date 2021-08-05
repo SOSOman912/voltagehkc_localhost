@@ -1,0 +1,10 @@
+name: Popups
+form: $/jack/voltage/models/popup/fields.yaml
+modelClass: Jack\Voltage\Models\Popup
+defaultRedirect: jack/voltage/popups
+create:
+    redirect: 'jack/voltage/popups/update/:id'
+    redirectClose: jack/voltage/popups
+update:
+    redirect: jack/voltage/popups
+    redirectClose: jack/voltage/popups

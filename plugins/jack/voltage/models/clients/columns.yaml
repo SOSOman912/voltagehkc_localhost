@@ -1,0 +1,6 @@
+columns:
+    image:
+        label: 'jack.voltage::lang.client.image'
+        type: text
+        searchable: true
+        sortable: true

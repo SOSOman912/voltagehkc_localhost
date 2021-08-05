@@ -1,0 +1,4 @@
+title: Testimonials
+modelClass: Jack\Voltage\Models\Testimonial
+toolbar:
+    buttons: reorder_toolbar

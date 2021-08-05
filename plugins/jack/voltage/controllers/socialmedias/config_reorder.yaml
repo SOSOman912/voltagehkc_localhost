@@ -1,0 +1,4 @@
+title: Socialmedias
+modelClass: Jack\Voltage\Models\Socialmedia
+toolbar:
+    buttons: reorder_toolbar

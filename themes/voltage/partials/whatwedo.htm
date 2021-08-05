@@ -1,0 +1,96 @@
+==
+<?php
+use Jack\Voltage\Models\Whatwedo;
+
+function onEnd(){
+
+    
+   // $theid =  $this->param('slug');
+    
+    $this['whatwedo'] = Whatwedo::where('id','>','0')->get();
+}
+?>
+==
+<div class="col-sm-6 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0s">
+
+                        <div class="service-box style-4">
+                            
+                            <span class="service-box-icon  rollIn" data-wow-duration="1s"  data-wow-delay="0s">
+                                <i class="icon icon-media-relationship"></i>
+                            </span>
+                            
+                            <div class="service-box-content">
+                        
+                                <h5 class=" fadeInRight2" data-wow-duration="1s" data-wow-delay="0s"><a href="#">{{whatwedo[0].title}}</a></h5>
+
+                                <i class="icon ion-md-add"></i>
+                                <i class="icon ion-md-remove"></i>
+                                                      
+                                                      
+                                <p data-wow-duration="1s" data-wow-delay="0.6s">{{whatwedo[0].brief_desc}}</p>
+                                 
+                            </div><!-- service-box-content -->
+                            
+                        </div><!-- service-box -->
+
+                    </div><!-- / .col-sm-6 -->
+
+                    <div class="col-sm-6 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0s">
+
+                        <div class="service-box style-4">
+                            
+                            <span class="service-box-icon  rollIn" data-wow-duration="1s"  data-wow-delay="0.4s">
+                                <i class="icon icon-socialmedia-strategy"></i>
+                            </span>
+                            
+                            <div class="service-box-content">
+                            
+                                <h5 class=" fadeInRight2" data-wow-duration="1s" data-wow-delay="0.4s"><a href="#">{{whatwedo[1].title}}</a></h5>
+                                
+                                <p data-wow-duration="1s" data-wow-delay="0.6s">{{whatwedo[1].brief_desc}}</p>
+                            
+                            </div><!-- service-box-content -->
+                            
+                        </div><!-- service-box -->
+
+                    </div><!-- / .col-sm-6 -->
+
+                  <div class="col-sm-6 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0s">
+
+                        <div class="service-box style-4">
+                            
+                            <span class="service-box-icon  rollIn" data-wow-duration="1s"  data-wow-delay="0s">
+                                <i class="icon icon-event-management"></i>    
+                            </span>
+                            
+                            <div class="service-box-content">
+                            
+                                <h5 class="fadeInRight2" data-wow-duration="1s" data-wow-delay="0s"><a href="#">{{whatwedo[2].title}}</a></h5>
+                                
+                                <p data-wow-duration="1s" data-wow-delay="0.6s">{{whatwedo[2].brief_desc}}</p>
+                                
+                            </div><!-- service-box-content -->
+                            
+                        </div><!-- service-box -->
+
+                    </div><!-- / .col-sm-6 -->
+
+                    <div class="col-sm-6 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0s">
+
+                        <div class="service-box style-4">
+                            
+                            <span class="service-box-icon  rollIn" data-wow-duration="1s"  data-wow-delay="0.4s">
+                                <i class="icon icon-col-campaign"></i>
+                            </span>
+                            
+                            <div class="service-box-content">
+                            
+                                <h5 class="fadeInRight2" data-wow-duration="1s" data-wow-delay="0.4s"><a href="#">{{whatwedo[3].title}}</a></h5>
+                                
+                                <p data-wow-duration="1s" data-wow-delay="0.6s">{{whatwedo[3].brief_desc}}</p>
+                            
+                            </div><!-- service-box-content -->
+                            
+                        </div><!-- service-box -->
+
+                    </div><!-- / .col-sm-6 -->

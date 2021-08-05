@@ -1,0 +1,571 @@
+1628069881a:1:{s:20:"portfolio-detail.htm";a:8:{s:8:"fileName";s:20:"portfolio-detail.htm";s:7:"content";s:13388:"title = "portfolio detail"
+url = "/portfolio-detail/:slug"
+is_hidden = 0
+==
+<?php
+use Jack\Voltage\Models\Case2;
+use Jack\Voltage\Models\Category;
+function onEnd(){
+
+    
+    $theslug =  $this->param('slug');
+    
+    $this['categories'] = Category::where('id','>',0)->orderBy('title','asc')->get();
+    $this['case'] = Case2::where('slug',$theslug)->first();
+    if($this['case']){
+        $this->page->title = $this['case']->title;
+        $this['imageCount'] = count($this['case']->image1);
+    }else{
+        header('Location: https://www.voltagehk.com/404');
+    }
+}
+?>
+==
+{% partial 'header2' %}
+<style>
+#main-container{
+    background-color: #fff;
+}
+</style>
+       <div id="page-content" style='background-color: #fff;'>
+       
+            <div class="mt106 {{ imageCount > 1 ? 'owl-carousel custom-content content-portfolio-detail' : '' }} mb0">
+                
+                                  
+                            {% for pic in case.image1 %}
+                             <section class="content-portfolio-detail-item">    
+                                 <img src="{{ pic.path }}" style='width:100%' >
+                             </section>            
+                             {% endfor %}
+            
+          </div><!-- / .owl-carousel .custom-content .content-portfolio-detail -->
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        
+                        <ol class="breadcrumb custom-breadcrumbs mt30 mb60">
+                            <li><a href="{{ 'home' | page }}">Home</a></li>
+                            <li><a href="{{ 'case-study' | page }}">Case Study</a></li>
+                            
+                            
+                            
+                                                {% if case.categories.count %} 
+                                                    {% for category in case.categories %}
+                                                        <li><a href="{{ 'case-study' | page }}/?thecat=thecat{{ category.id }}">
+                                                        {{ category.title }}{% if not loop.last %}  {% endif %}
+                                                        </a></li>
+                                                    {% endfor %}
+                                                {% endif %}
+                            
+                            
+                            
+                            <li class="active">{{ case.title }}</li>
+                        </ol>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="row">
+<!--
+                    <div class="col-sm-3">  
+                        <div class="widget widget-list style-2">
+                            <h3 class="widget-title">Case Studies</h3>
+
+                            <div>
+                                <ul>
+                                    <li><a href="#">Company Name</a></li>
+                                    <li><a href="#">Website</a></li>
+                                    <li><a href="#">Contact Info</a></li>
+                                    <li><a href="#">Category</a></li>
+                                </ul>
+                            </div>
+                        </div> --><!-- / .widget-list -->
+<!--
+                        <div class="widget widget-text style-2">
+                            <h3 class="widget-title">Interested?</h3>
+
+                            <div>
+                                <p>Don't be afraid to tell us about your project's timeline and budget. We're straightforward with our abilities & pricing, and knowing where you're coming from helps us hit the target</p>
+                                
+                                <div class="clearfix space15"></div>
+                                <a href="#" class="btn btn-default btn-big">Contact Us Now!</a>
+                            </div>
+                        </div> --><!-- / .widget-list -->
+                <!--    </div> -->
+                
+                    <div class="col-md-8 col-md-offset-2">
+                        <h3 class='mb60 textupper'>{{ case.title }}</h3>
+                        <h4>Overview</h4>
+
+                        <p>{{ case.overview }}</p>
+
+                        
+                        <h4>Strategy</h4>
+                        <p>{{ case.strategy }}</p>
+                        <h4>Results</h4>
+                        <p>{{ case.result }}</p>
+                        
+                        
+                        {% if case.prvalue %}
+                        <div class="portfolio-block mt30 mb30">
+                            <div class='row'>
+                            	<div class='col-md-4'>
+                            		<img src="http://139.162.35.237/voltage/themes/voltage/assets/images/porfolio-visitor.png" alt="visitor">
+                            	
+                            		<div class="counter">
+                            
+                                        <div class="counter-value" data-value="{{ case.prvalue }}"></div>
+                                        
+                                        <div class="counter-details">
+                                            <h4>PR Value</h4>
+                                        </div><!-- counter-details -->
+                                        
+                                    </div><!-- counter -->
+                            		
+                            	</div>
+                            	<div class='col-md-4'>
+                            		<img src="http://139.162.35.237/voltage/themes/voltage/assets/images/porfolio-leader.png" alt="leader">
+                            	
+                            	    <div class="counter">
+                            
+                                        <div class="counter-value" data-value="{{ case.leader }}"></div>
+                                        
+                                        <div class="counter-details">
+                                            <h4>Industry leaders attended</h4>
+                                        </div><!-- counter-details -->
+                                        
+                                    </div><!-- counter -->
+                            	
+                            	
+                            		
+                            	</div>
+                            	<div class='col-md-4'>
+                            		<img src="http://139.162.35.237/voltage/themes/voltage/assets/images/portfolio-media.png" alt="media">
+                            		
+                            		<div class="counter">
+                            
+                                        <div class="counter-value" data-value="{{ case.coverage }}"></div>
+                                        
+                                        <div class="counter-details">
+                                            <h4>coverage in media</h4>
+                                        </div><!-- counter-details -->
+                                        
+                                    </div><!-- counter -->
+                            	
+                            	</div>
+                            </div>
+                        </div>
+                        {% endif %}
+                        
+                        <div class="mtn30 owl-carousel custom-content content-portfolio-detail nonav mb0">
+                        {% for pic in case.image2 %}
+                             <section class="content-portfolio-detail-item">    
+                                 <img src="{{ pic.path }}" >
+                             </section>            
+                        {% endfor %}
+                        
+                        </div><!-- / .owl-carousel .custom-content .content-portfolio-detail -->
+                        
+                        
+                        {% if  case.testimonial %}
+                        <div class="testimonial">
+                            <blockquote>
+                                        
+                                            <h4>&quot;{{ case.testimonial }}&quot;</h4>
+                                        
+                            </blockquote>
+                            
+                            {% if case.testimoniallink %}
+                                <a href='{{ case.testimoniallink }}' target='_blank'>
+                                 <h4 class='newj'>{{ case.testimonialname }}</h4>
+                                 <h6>{{ case.testimonialtitle }}</h6>
+                                </a>
+                            {% else %}
+                                 <h4 class='newj'>{{ case.testimonialname }}</h4>
+                                 <h6>{{ case.testimonialtitle }}</h6>
+                            {% endif %}
+                                        
+                     
+
+                         </div>
+                         {% endif %}
+                         
+                         <div class='qcontact text-center'>
+                             <h3>INTERESTED?</h3>
+                             <p>Don't be afraid to tell us your next project's timeline and budget!</p>
+                             <a class="btn btn-default btn-min-width wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s" href="{{ 'contact' | page }}">Contact Us</a>
+                         </div>
+
+
+                   
+                </div>
+            </div>
+
+            <div class="clearfix space60 showin-1200"></div>
+            <div class="clearfix space15 showin-1200"></div>
+
+
+        </div>
+        
+        <div class="isotope-fit-columns-lp clearfix nospace-bottom isotope-lp isotope-lp-inner hidden-991">
+                <div class="portfolio-item item-casestudy w2 one">
+                        
+                    <a href="http://www.voltagehk.com/portfolio-detail/topfit" class="portfolio-item-thumbnail">
+                            
+                        <img src="{{ 'assets/images/case-study/topfit2.jpg'|theme }}" alt="">
+                        
+                        <div class="portfolio-item-hover">
+                            
+       
+                            
+                            <div class="portfolio-item-description">
+                                
+                                <h4>TopFit</h4>
+                                
+                                <span>learn More</span>
+                                
+                            </div><!-- portfolio-item-description -->
+                            
+                        </div><!-- portfolio-item-hover -->
+                        
+                    </a><!-- portfolio-item-thumbnail -->
+
+                </div><!-- portfolio-item -->
+
+                <div class="portfolio-item item-casestudy w3 two">
+                        
+                    <a href="http://www.voltagehk.com/portfolio-detail/kben-hol" class="portfolio-item-thumbnail">
+                            
+                        <img src="{{ 'assets/images/case-study/keb.jpg'|theme }}" alt="">
+                        
+                        <div class="portfolio-item-hover">
+                            
+                
+                            
+                            <div class="portfolio-item-description">
+                                
+                                <h4>KBEN & HOL</h4>
+                                
+                                <span>learn More</span>
+                                
+                            </div><!-- portfolio-item-description -->
+                            
+                        </div><!-- portfolio-item-hover -->
+                        
+                    </a><!-- portfolio-item-thumbnail -->
+
+                </div><!-- portfolio-item -->
+
+                <div class="portfolio-item item-casestudy w50 seven">
+                        
+                    <a href="http://www.voltagehk.com/portfolio-detail/gradini-at-the-pottinger-hong-kong" class="portfolio-item-thumbnail">
+                            
+                        <img src="{{ 'assets/images/case-study/celevi2.jpg'|theme }}" alt="">
+                        
+                        <div class="portfolio-item-hover">
+                            
+                  
+                            
+                            <div class="portfolio-item-description">
+                                
+                                <h4>The Pottinger Hotel</h4>
+                                
+                                <span>learn More</span>
+                                
+                            </div><!-- portfolio-item-description -->
+                            
+                        </div><!-- portfolio-item-hover -->
+                        
+                    </a><!-- portfolio-item-thumbnail -->
+
+                </div><!-- portfolio-item -->
+    </div>
+        
+    </div><!-- / PAGE CONTENT -->
+</body>
+
+{% partial 'footer' %}";s:5:"mtime";i:1592898596;s:6:"markup";s:12795:"{% partial 'header2' %}
+<style>
+#main-container{
+    background-color: #fff;
+}
+</style>
+       <div id="page-content" style='background-color: #fff;'>
+       
+            <div class="mt106 {{ imageCount > 1 ? 'owl-carousel custom-content content-portfolio-detail' : '' }} mb0">
+                
+                                  
+                            {% for pic in case.image1 %}
+                             <section class="content-portfolio-detail-item">    
+                                 <img src="{{ pic.path }}" style='width:100%' >
+                             </section>            
+                             {% endfor %}
+            
+          </div><!-- / .owl-carousel .custom-content .content-portfolio-detail -->
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        
+                        <ol class="breadcrumb custom-breadcrumbs mt30 mb60">
+                            <li><a href="{{ 'home' | page }}">Home</a></li>
+                            <li><a href="{{ 'case-study' | page }}">Case Study</a></li>
+                            
+                            
+                            
+                                                {% if case.categories.count %} 
+                                                    {% for category in case.categories %}
+                                                        <li><a href="{{ 'case-study' | page }}/?thecat=thecat{{ category.id }}">
+                                                        {{ category.title }}{% if not loop.last %}  {% endif %}
+                                                        </a></li>
+                                                    {% endfor %}
+                                                {% endif %}
+                            
+                            
+                            
+                            <li class="active">{{ case.title }}</li>
+                        </ol>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="row">
+<!--
+                    <div class="col-sm-3">  
+                        <div class="widget widget-list style-2">
+                            <h3 class="widget-title">Case Studies</h3>
+
+                            <div>
+                                <ul>
+                                    <li><a href="#">Company Name</a></li>
+                                    <li><a href="#">Website</a></li>
+                                    <li><a href="#">Contact Info</a></li>
+                                    <li><a href="#">Category</a></li>
+                                </ul>
+                            </div>
+                        </div> --><!-- / .widget-list -->
+<!--
+                        <div class="widget widget-text style-2">
+                            <h3 class="widget-title">Interested?</h3>
+
+                            <div>
+                                <p>Don't be afraid to tell us about your project's timeline and budget. We're straightforward with our abilities & pricing, and knowing where you're coming from helps us hit the target</p>
+                                
+                                <div class="clearfix space15"></div>
+                                <a href="#" class="btn btn-default btn-big">Contact Us Now!</a>
+                            </div>
+                        </div> --><!-- / .widget-list -->
+                <!--    </div> -->
+                
+                    <div class="col-md-8 col-md-offset-2">
+                        <h3 class='mb60 textupper'>{{ case.title }}</h3>
+                        <h4>Overview</h4>
+
+                        <p>{{ case.overview }}</p>
+
+                        
+                        <h4>Strategy</h4>
+                        <p>{{ case.strategy }}</p>
+                        <h4>Results</h4>
+                        <p>{{ case.result }}</p>
+                        
+                        
+                        {% if case.prvalue %}
+                        <div class="portfolio-block mt30 mb30">
+                            <div class='row'>
+                            	<div class='col-md-4'>
+                            		<img src="http://139.162.35.237/voltage/themes/voltage/assets/images/porfolio-visitor.png" alt="visitor">
+                            	
+                            		<div class="counter">
+                            
+                                        <div class="counter-value" data-value="{{ case.prvalue }}"></div>
+                                        
+                                        <div class="counter-details">
+                                            <h4>PR Value</h4>
+                                        </div><!-- counter-details -->
+                                        
+                                    </div><!-- counter -->
+                            		
+                            	</div>
+                            	<div class='col-md-4'>
+                            		<img src="http://139.162.35.237/voltage/themes/voltage/assets/images/porfolio-leader.png" alt="leader">
+                            	
+                            	    <div class="counter">
+                            
+                                        <div class="counter-value" data-value="{{ case.leader }}"></div>
+                                        
+                                        <div class="counter-details">
+                                            <h4>Industry leaders attended</h4>
+                                        </div><!-- counter-details -->
+                                        
+                                    </div><!-- counter -->
+                            	
+                            	
+                            		
+                            	</div>
+                            	<div class='col-md-4'>
+                            		<img src="http://139.162.35.237/voltage/themes/voltage/assets/images/portfolio-media.png" alt="media">
+                            		
+                            		<div class="counter">
+                            
+                                        <div class="counter-value" data-value="{{ case.coverage }}"></div>
+                                        
+                                        <div class="counter-details">
+                                            <h4>coverage in media</h4>
+                                        </div><!-- counter-details -->
+                                        
+                                    </div><!-- counter -->
+                            	
+                            	</div>
+                            </div>
+                        </div>
+                        {% endif %}
+                        
+                        <div class="mtn30 owl-carousel custom-content content-portfolio-detail nonav mb0">
+                        {% for pic in case.image2 %}
+                             <section class="content-portfolio-detail-item">    
+                                 <img src="{{ pic.path }}" >
+                             </section>            
+                        {% endfor %}
+                        
+                        </div><!-- / .owl-carousel .custom-content .content-portfolio-detail -->
+                        
+                        
+                        {% if  case.testimonial %}
+                        <div class="testimonial">
+                            <blockquote>
+                                        
+                                            <h4>&quot;{{ case.testimonial }}&quot;</h4>
+                                        
+                            </blockquote>
+                            
+                            {% if case.testimoniallink %}
+                                <a href='{{ case.testimoniallink }}' target='_blank'>
+                                 <h4 class='newj'>{{ case.testimonialname }}</h4>
+                                 <h6>{{ case.testimonialtitle }}</h6>
+                                </a>
+                            {% else %}
+                                 <h4 class='newj'>{{ case.testimonialname }}</h4>
+                                 <h6>{{ case.testimonialtitle }}</h6>
+                            {% endif %}
+                                        
+                     
+
+                         </div>
+                         {% endif %}
+                         
+                         <div class='qcontact text-center'>
+                             <h3>INTERESTED?</h3>
+                             <p>Don't be afraid to tell us your next project's timeline and budget!</p>
+                             <a class="btn btn-default btn-min-width wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s" href="{{ 'contact' | page }}">Contact Us</a>
+                         </div>
+
+
+                   
+                </div>
+            </div>
+
+            <div class="clearfix space60 showin-1200"></div>
+            <div class="clearfix space15 showin-1200"></div>
+
+
+        </div>
+        
+        <div class="isotope-fit-columns-lp clearfix nospace-bottom isotope-lp isotope-lp-inner hidden-991">
+                <div class="portfolio-item item-casestudy w2 one">
+                        
+                    <a href="http://www.voltagehk.com/portfolio-detail/topfit" class="portfolio-item-thumbnail">
+                            
+                        <img src="{{ 'assets/images/case-study/topfit2.jpg'|theme }}" alt="">
+                        
+                        <div class="portfolio-item-hover">
+                            
+       
+                            
+                            <div class="portfolio-item-description">
+                                
+                                <h4>TopFit</h4>
+                                
+                                <span>learn More</span>
+                                
+                            </div><!-- portfolio-item-description -->
+                            
+                        </div><!-- portfolio-item-hover -->
+                        
+                    </a><!-- portfolio-item-thumbnail -->
+
+                </div><!-- portfolio-item -->
+
+                <div class="portfolio-item item-casestudy w3 two">
+                        
+                    <a href="http://www.voltagehk.com/portfolio-detail/kben-hol" class="portfolio-item-thumbnail">
+                            
+                        <img src="{{ 'assets/images/case-study/keb.jpg'|theme }}" alt="">
+                        
+                        <div class="portfolio-item-hover">
+                            
+                
+                            
+                            <div class="portfolio-item-description">
+                                
+                                <h4>KBEN & HOL</h4>
+                                
+                                <span>learn More</span>
+                                
+                            </div><!-- portfolio-item-description -->
+                            
+                        </div><!-- portfolio-item-hover -->
+                        
+                    </a><!-- portfolio-item-thumbnail -->
+
+                </div><!-- portfolio-item -->
+
+                <div class="portfolio-item item-casestudy w50 seven">
+                        
+                    <a href="http://www.voltagehk.com/portfolio-detail/gradini-at-the-pottinger-hong-kong" class="portfolio-item-thumbnail">
+                            
+                        <img src="{{ 'assets/images/case-study/celevi2.jpg'|theme }}" alt="">
+                        
+                        <div class="portfolio-item-hover">
+                            
+                  
+                            
+                            <div class="portfolio-item-description">
+                                
+                                <h4>The Pottinger Hotel</h4>
+                                
+                                <span>learn More</span>
+                                
+                            </div><!-- portfolio-item-description -->
+                            
+                        </div><!-- portfolio-item-hover -->
+                        
+                    </a><!-- portfolio-item-thumbnail -->
+
+                </div><!-- portfolio-item -->
+    </div>
+        
+    </div><!-- / PAGE CONTENT -->
+</body>
+
+{% partial 'footer' %}";s:4:"code";s:504:"use Jack\Voltage\Models\Case2;
+use Jack\Voltage\Models\Category;
+function onEnd(){
+
+    
+    $theslug =  $this->param('slug');
+    
+    $this['categories'] = Category::where('id','>',0)->orderBy('title','asc')->get();
+    $this['case'] = Case2::where('slug',$theslug)->first();
+    if($this['case']){
+        $this->page->title = $this['case']->title;
+        $this['imageCount'] = count($this['case']->image1);
+    }else{
+        header('Location: https://www.voltagehk.com/404');
+    }
+}";s:5:"title";s:16:"portfolio detail";s:3:"url";s:23:"/portfolio-detail/:slug";s:9:"is_hidden";s:1:"0";}}

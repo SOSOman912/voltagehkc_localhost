@@ -1,0 +1,25 @@
+.custom-breadcrumbs
+	background: transparent
+	border-radius: 0
+	padding:
+		left: 0
+		right: 0
+		bottom: 0
+	margin-bottom: 0
+	li
+		font:
+			family: $avenir
+			weight: bold
+		&.active
+			color: $color-primary
+		a
+			color: $color-dark
+			transition: $default-transition
+			&:hover,
+			&:focus
+				color: $color-primary
+				text-decoration: none
+		+ li
+			&:before
+				content: '> '
+				padding: 0

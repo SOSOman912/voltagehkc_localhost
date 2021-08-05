@@ -1,0 +1,32 @@
+plugin:
+    name: 'jack.voltage::lang.plugin.name'
+    description: 'jack.voltage::lang.plugin.description'
+    author: jack
+    icon: oc-icon-adjust
+    homepage: ''
+navigation:
+    main-menu-item:
+        label: Content
+        url: jack/voltage/cases
+        icon: icon-life-ring
+        sideMenu:
+            side-menu-item:
+                label: 'Case Study'
+                url: jack/voltage/cases
+                icon: icon-sitemap
+            side-menu-item2:
+                label: Category
+                url: jack/voltage/categories
+                icon: icon-sitemap
+            side-menu-item3:
+                label: Client
+                url: jack/voltage/clients
+                icon: icon-sitemap
+            side-menu-item4:
+                label: 'Social Media'
+                url: jack/voltage/socialmedias
+                icon: icon-sitemap
+            side-menu-item5:
+                label: Testimonials
+                url: jack/voltage/testimonials
+                icon: icon-sitemap

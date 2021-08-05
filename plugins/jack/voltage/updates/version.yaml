@@ -1,0 +1,89 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table jack_voltage_cases'
+    - builder_table_create_jack_voltage_cases.php
+1.0.3:
+    - 'Updated table jack_voltage_cases'
+    - builder_table_update_jack_voltage_cases.php
+1.0.4:
+    - 'Updated table jack_voltage_cases'
+    - builder_table_update_jack_voltage_cases_2.php
+1.0.5:
+    - 'Updated table jack_voltage_cases'
+    - builder_table_update_jack_voltage_cases_3.php
+1.0.6:
+    - 'Created table jack_voltage_categories'
+    - builder_table_create_jack_voltage_categories.php
+1.0.7:
+    - 'Created table jack_voltage_categories_cases'
+    - builder_table_create_jack_voltage_categories_cases.php
+1.0.8:
+    - 'Updated table jack_voltage_cases'
+    - builder_table_update_jack_voltage_cases_4.php
+1.0.9:
+    - 'Updated table jack_voltage_cases'
+    - builder_table_update_jack_voltage_cases_5.php
+1.0.10:
+    - 'Created table jack_voltage_clients'
+    - builder_table_create_jack_voltage_clients.php
+1.0.11:
+    - 'Updated table jack_voltage_clients'
+    - builder_table_update_jack_voltage_client.php
+1.0.12:
+    - 'Updated table jack_voltage_client'
+    - builder_table_update_jack_voltage_client_2.php
+1.0.13:
+    - 'Updated table jack_voltage_client'
+    - builder_table_update_jack_voltage_client_3.php
+1.0.14:
+    - 'Updated table jack_voltage_client'
+    - builder_table_update_jack_voltage_client_4.php
+1.0.15:
+    - 'Created table jack_voltage_socialmedia'
+    - builder_table_create_jack_voltage_socialmedia.php
+1.0.16:
+    - 'Updated table jack_voltage_socialmedia'
+    - builder_table_update_jack_voltage_socialmedia.php
+1.0.17:
+    - 'Created table jack_voltage_testimonials'
+    - builder_table_create_jack_voltage_testimonials.php
+1.0.18:
+    - 'Updated table jack_voltage_testimonials'
+    - builder_table_update_jack_voltage_testimonials.php
+1.0.19:
+    - 'Created table jack_voltage_core_value'
+    - builder_table_create_jack_voltage_core_value.php
+1.0.20:
+    - 'Updated table jack_voltage_core_value'
+    - builder_table_update_jack_voltage_core_value.php
+1.0.21:
+    - 'Updated table jack_voltage_cases'
+    - builder_table_update_jack_voltage_cases_6.php
+1.0.22:
+    - 'Created table jack_voltage_homeslider'
+    - builder_table_create_jack_voltage_homeslider.php
+1.0.23:
+    - 'Created table jack_voltage_popup'
+    - builder_table_create_jack_voltage_popup.php
+1.0.24:
+    - 'Created table jack_voltage_counter'
+    - builder_table_create_jack_voltage_counter.php
+1.0.25:
+    - 'Created table jack_voltage_homecases'
+    - builder_table_create_jack_voltage_homecases.php
+1.0.26:
+    - 'Updated table jack_voltage_homecases'
+    - builder_table_update_jack_voltage_homecases.php
+1.0.27:
+    - 'Created table jack_voltage_homewhatwedo'
+    - builder_table_create_jack_voltage_homewhatwedo.php
+1.0.28:
+    - 'Updated table jack_voltage_homewhatwedo'
+    - builder_table_update_jack_voltage_whatwedo.php
+1.0.29:
+    - 'Updated table jack_voltage_popup'
+    - builder_table_update_jack_voltage_popup.php
+1.0.30:
+    - 'Updated table jack_voltage_popup'
+    - builder_table_update_jack_voltage_popup_2.php

@@ -1,0 +1,11 @@
+fields:
+    image:
+        label: Image
+        oc.commentPosition: ''
+        mode: image
+        span: auto
+        type: mediafinder
+    feature:
+        label: 'Featured?'
+        span: auto
+        type: switch

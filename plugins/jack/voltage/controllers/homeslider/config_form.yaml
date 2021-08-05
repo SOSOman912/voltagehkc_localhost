@@ -1,0 +1,10 @@
+name: Homeslider
+form: $/jack/voltage/models/homeslider/fields.yaml
+modelClass: Jack\Voltage\Models\Homeslider
+defaultRedirect: jack/voltage/homeslider
+create:
+    redirect: 'jack/voltage/homeslider/update/:id'
+    redirectClose: jack/voltage/homeslider
+update:
+    redirect: jack/voltage/homeslider
+    redirectClose: jack/voltage/homeslider

@@ -1,0 +1,31 @@
+.hidden-md
+	display: none !important
+	@include max991
+		display: block !important
+
+.showin
+	&-1200
+		display: none !important
+		@include max991
+			display: block !important
+	&-991
+		display: none !important
+		@include max991
+			display: block !important
+
+	&-480
+		display: none !important
+		@include max480
+			display: block !important  
+
+.hidden
+	&-only
+		&-480
+			@include max480
+				display: none !important
+	&-767
+		@include max767
+			display: none !important
+	&-991
+		@include max991
+			display: none !important

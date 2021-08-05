@@ -1,0 +1,40 @@
+h1, h2, h3, h4, h5, h6
+	font:
+		family: $gotham-black
+
+h3
+	font-size: 26px
+	letter-spacing: 2px
+
+p
+	font:
+		size: 14px
+	color: black
+
+.font
+	&-weight
+		font-family: $gotham-black
+	&-16
+		font-size: 16px
+		line-height: 1.6
+		@include max767
+			font-size: 14px
+	&-18
+		font-size: 18px
+		line-height: 1.6
+		@include max767
+			font-size: 16px
+	&-21
+		font-size: 21px
+		line-height: 1.6
+		@include max767
+			font-size: 18px
+
+.text-blue
+	color: $color-primary !important
+
+.text-normal
+	text-transform: none !important
+
+.text-uppercase
+	text-transform: uppercase !important

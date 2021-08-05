@@ -1,0 +1,36 @@
+.testimonial
+	text-align: left
+	position: relative
+	padding:
+		left: 125px
+		top: 45px
+	&:before
+		content: ''
+		position: absolute
+		background-image: url(../images/images-sprite.png);
+		background-position: 0px 0px;
+		width: 114px;
+		height: 69px;
+		left: 0
+		top: 0
+	blockquote
+		h4
+			font: 
+				style: italic
+	h4, h6
+		font:
+			family: $gotham-book
+			weight: normal
+
+	h4
+		&.text-uppercase
+			font:
+				family: $gotham-bold
+
+.testimonial-carousel
+	.owl-pagination
+		bottom: -45px !important
+		.owl-page
+			margin: 0 5px 0 !important
+			&.active
+				background: $color-primary

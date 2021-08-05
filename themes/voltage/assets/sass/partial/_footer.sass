@@ -1,0 +1,52 @@
+#footer
+	background-color: $color-bg-dark
+	padding: 40px 0 75px !important
+	p
+		color: white
+		font-size: 12px
+	.widget-logo
+		@include max767
+			text-align: center
+			width: 100%
+			margin-bottom: 45px !important
+		a
+			@include max767
+				display: inline-block
+
+		img
+			@include max767
+				display: inline-block
+
+
+.footer-sep
+	border-top: 1px solid $color-border-at-bg-dark
+	margin:
+		top: 30px
+		bottom: 30px
+
+.navigation-footer
+	@include max767
+		float: none !important
+		text-align: center
+	ul
+		list-style: none outside none
+		margin: 0
+		padding: 0
+		li
+			float: left
+			display: block
+			margin-left: 30px
+			@include max767
+				float: none
+				display: inline-block
+				margin: 0 10px
+			a
+				font:
+					family: $gotham-bold
+					size: 12px
+				text-transform: uppercase
+
+				&:hover,
+				&:focus
+					text-decoration: none
+					color: darken( $color-border-at-bg-dark, 10% ) !important

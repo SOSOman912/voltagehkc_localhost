@@ -1,0 +1,62 @@
+1519899468a:1:{s:11:"header2.htm";a:6:{s:8:"fileName";s:11:"header2.htm";s:7:"content";s:1113:"==
+{% partial 'head' %}
+<body>
+    
+    <div id="main-container">
+
+        <!-- HEADER -->
+        <header id="header"  class="header-style-two style3">
+            
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-3">
+
+                        <!-- LOGO -->
+                        <div id="logo">
+                            <a href="{{'home' | page}}">
+                                <img src="{{ 'assets/images/logo.png'|theme }}" alt="" class="logo-light">
+                                <img src="{{ 'assets/images/logo-dark.png'|theme }}" alt="" class="logo-dark">
+                            </a>
+                        </div><!-- LOGO -->    
+                    </div><!-- col -->
+
+                    <div class="col-sm-9">
+                        <!-- MENU --> 
+                        <nav>
+                            {% partial 'nav' %}
+                        </nav>
+                    </div><!-- col -->
+                </div><!-- row -->
+            </div><!-- container -->    
+                    
+        </header><!-- HEADER -->";s:5:"mtime";i:1516252259;s:6:"markup";s:1110:"{% partial 'head' %}
+<body>
+    
+    <div id="main-container">
+
+        <!-- HEADER -->
+        <header id="header"  class="header-style-two style3">
+            
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-3">
+
+                        <!-- LOGO -->
+                        <div id="logo">
+                            <a href="{{'home' | page}}">
+                                <img src="{{ 'assets/images/logo.png'|theme }}" alt="" class="logo-light">
+                                <img src="{{ 'assets/images/logo-dark.png'|theme }}" alt="" class="logo-dark">
+                            </a>
+                        </div><!-- LOGO -->    
+                    </div><!-- col -->
+
+                    <div class="col-sm-9">
+                        <!-- MENU --> 
+                        <nav>
+                            {% partial 'nav' %}
+                        </nav>
+                    </div><!-- col -->
+                </div><!-- row -->
+            </div><!-- container -->    
+                    
+        </header><!-- HEADER -->";s:4:"code";N;s:17:"_PARSER_ERROR_INI";s:0:"";}}

@@ -1,0 +1,10 @@
+name: Testimonials
+form: $/jack/voltage/models/testimonial/fields.yaml
+modelClass: Jack\Voltage\Models\Testimonial
+defaultRedirect: jack/voltage/testimonials
+create:
+    redirect: 'jack/voltage/testimonials/update/:id'
+    redirectClose: jack/voltage/testimonials
+update:
+    redirect: jack/voltage/testimonials
+    redirectClose: jack/voltage/testimonials

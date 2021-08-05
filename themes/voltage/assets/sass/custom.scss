@@ -1,0 +1,68 @@
+// @keyframes growDown {
+//     0% {
+//       transform: translateY(-10%);
+//       opacity: 0;
+//     }
+//     80% {
+//       transform: translateY(-1%);
+//       opacity: 0.8;
+//     }
+//     100% {
+//       transform: translatey(0);
+//       opacity: 1;
+//     }
+//   }
+
+  
+
+@media (max-width: 797px) {
+    #happy-clients-space-section {
+        display:none;
+    }
+
+    #happy-client-container {
+        display:none;
+    }
+}
+
+#section-7 {
+    padding: 55px 0 45px 0; 
+}
+
+.service-box-content {
+    position:relative;
+
+    .fadeInRight2 {
+        display: flex;
+        justify-content: space-between;
+
+        .accordion {
+            color:#13d5e7;
+            cursor: pointer;
+            border: none;
+            outline: none;
+            font-size: 15px;
+            transition: 0.4s;
+          }
+    }
+
+    .service-describtion {
+        // display: none;
+        overflow: hidden;
+    }   
+
+    &:hover .service-describtion {
+        max-height: 1000px;
+        display:block;
+    }
+}
+
+
+.ion-md-remove {
+    display:none;
+}
+
+
+.fadeInRight2:hover  .service-describtion{
+
+}

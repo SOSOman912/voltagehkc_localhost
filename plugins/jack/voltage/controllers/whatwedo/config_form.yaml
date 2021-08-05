@@ -1,0 +1,10 @@
+name: Whatwedo
+form: $/jack/voltage/models/whatwedo/fields.yaml
+modelClass: Jack\Voltage\Models\Whatwedo
+defaultRedirect: jack/voltage/whatwedo
+create:
+    redirect: 'jack/voltage/whatwedo/update/:id'
+    redirectClose: jack/voltage/whatwedo
+update:
+    redirect: jack/voltage/whatwedo
+    redirectClose: jack/voltage/whatwedo

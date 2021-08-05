@@ -1,0 +1,4 @@
+title: Whatwedo
+modelClass: Jack\Voltage\Models\Whatwedo
+toolbar:
+    buttons: reorder_toolbar

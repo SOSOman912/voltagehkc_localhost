@@ -1,0 +1,17 @@
+fields:
+    title:
+        label: Title
+        oc.commentPosition: ''
+        span: auto
+        type: text
+    brief_desc:
+        label: 'Brief Description (Home)'
+        oc.commentPosition: ''
+        span: auto
+        type: text
+    desc:
+        label: Description
+        span: auto
+        size: ''
+        oc.commentPosition: ''
+        type: textarea

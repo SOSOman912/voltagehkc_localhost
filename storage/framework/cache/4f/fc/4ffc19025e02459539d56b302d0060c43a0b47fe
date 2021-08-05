@@ -1,0 +1,171 @@
+1628092512a:1:{s:12:"about-us.htm";a:8:{s:8:"fileName";s:12:"about-us.htm";s:7:"content";s:3813:"title = "about us"
+url = "/about-us"
+is_hidden = 0
+==
+{% partial 'header' %}
+
+        <div id="page-content">
+            
+         <!--   <div class="parallax nospace-bottom" data-stellar-background-ratio="0.2" id="page-header" style="background-image: url({{'assets/images/page-bg/2.jpg'|theme}});">-->
+       <!--         <div id="page-header" class="parallax nospace-bottom"  style="background-image: url({{'assets/images/page-bg/111.jpg'|theme}});">  -->
+                <div id="page-header" class="parallax nospace-bottom"  style="background-image: url({{'assets/images/page-bg/111.jpg'|theme}});"> 
+                 
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            
+                            <h2 class="page-header-title">About Us</h2>
+                            
+                        </div><!-- col -->
+                    </div><!-- row -->
+                </div><!-- container -->    
+            </div><!-- page-header -->
+
+            <div class="container space-section"></div>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        
+                        <div class="headline mb-60">
+                            <h3>We are Voltage</h3>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-8 col-sm-offset-2">
+                        
+                        <div class="about-us">
+                            <p>Voltage is a Hong Kong-based PR, digital and events marketing agency, specialized in delivering messages that resonate. Grounded in a proven - online, print and consumer facing - hybrid approach to communications, Voltage provides forward-thinking 360 engagement in an ever-changing media and consumer landscape. This multi-level strategy allows Voltage to propel brands through the clutter and to the forefront of Asia’s multilingual media arena – turning them into market leaders with concepts and experiences that people can relate to.</p>
+
+                          
+                        </div><!-- / .about-us -->
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="container space-section"></div>
+
+            <section class="full-section dark-section parallax" id="section-8" data-stellar-background-ratio="0.2" style="background-image: url({{'assets/images/section-bg/1.jpg'|theme}});">
+                <div class="full-section-overlay-color purple"></div>
+
+                <div class="full-section-container">
+                    
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                
+                                <div class="headline mb-45">
+                                    <h3>Case Study</h3>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-12">
+
+                                <div class="text-center">
+                                    <a href="{{'home' | page }}/case-study" class="btn btn-default-line btn-line-white btn-min-width">View All</a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section><!-- / .full-section -->
+
+        </div><!-- / PAGE CONTENT --> 
+</body>
+
+{% partial 'footer' %}";s:5:"mtime";i:1628069435;s:6:"markup";s:3759:"{% partial 'header' %}
+
+        <div id="page-content">
+            
+         <!--   <div class="parallax nospace-bottom" data-stellar-background-ratio="0.2" id="page-header" style="background-image: url({{'assets/images/page-bg/2.jpg'|theme}});">-->
+       <!--         <div id="page-header" class="parallax nospace-bottom"  style="background-image: url({{'assets/images/page-bg/111.jpg'|theme}});">  -->
+                <div id="page-header" class="parallax nospace-bottom"  style="background-image: url({{'assets/images/page-bg/111.jpg'|theme}});"> 
+                 
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            
+                            <h2 class="page-header-title">About Us</h2>
+                            
+                        </div><!-- col -->
+                    </div><!-- row -->
+                </div><!-- container -->    
+            </div><!-- page-header -->
+
+            <div class="container space-section"></div>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        
+                        <div class="headline mb-60">
+                            <h3>We are Voltage</h3>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-8 col-sm-offset-2">
+                        
+                        <div class="about-us">
+                            <p>Voltage is a Hong Kong-based PR, digital and events marketing agency, specialized in delivering messages that resonate. Grounded in a proven - online, print and consumer facing - hybrid approach to communications, Voltage provides forward-thinking 360 engagement in an ever-changing media and consumer landscape. This multi-level strategy allows Voltage to propel brands through the clutter and to the forefront of Asia’s multilingual media arena – turning them into market leaders with concepts and experiences that people can relate to.</p>
+
+                          
+                        </div><!-- / .about-us -->
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="container space-section"></div>
+
+            <section class="full-section dark-section parallax" id="section-8" data-stellar-background-ratio="0.2" style="background-image: url({{'assets/images/section-bg/1.jpg'|theme}});">
+                <div class="full-section-overlay-color purple"></div>
+
+                <div class="full-section-container">
+                    
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                
+                                <div class="headline mb-45">
+                                    <h3>Case Study</h3>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-12">
+
+                                <div class="text-center">
+                                    <a href="{{'home' | page }}/case-study" class="btn btn-default-line btn-line-white btn-min-width">View All</a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section><!-- / .full-section -->
+
+        </div><!-- / PAGE CONTENT --> 
+</body>
+
+{% partial 'footer' %}";s:4:"code";N;s:5:"title";s:8:"about us";s:3:"url";s:9:"/about-us";s:9:"is_hidden";s:1:"0";}}

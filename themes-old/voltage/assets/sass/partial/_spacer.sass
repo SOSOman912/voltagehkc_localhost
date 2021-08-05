@@ -1,0 +1,52 @@
+// spacer
+.space15
+	height: 15px
+	width: 100%
+	display: block
+
+.space30
+	height: 30px
+	width: 100%
+	display: block
+
+.space60
+	height: 60px
+	width: 100%
+	display: block
+
+.space120
+	height: 120px
+	width: 100%
+	display: block
+
+.nospace-bottom
+	margin-bottom: 0 !important
+
+.nopadd
+	&-bottom
+		padding-bottom: 0 !important
+	&-left
+		padding-left: 0 !important
+	&-right
+		padding-right: 0 !important
+
+.mb
+	&-45
+		margin-bottom: 45px !important
+
+	&-60
+		margin-bottom: 60px !important
+
+.space-line
+	padding: 60px 0 90px
+	hr
+		margin: 0
+		border:
+			top: 1px solid $color-dark
+
+.space-section
+	width: 100%
+	display: block
+	height: 95px
+	@include max480
+		height: 30px

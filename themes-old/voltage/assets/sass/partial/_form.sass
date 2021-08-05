@@ -1,0 +1,41 @@
+form
+	input[type="text"],
+	input[type="email"],
+	input[type="url"],
+	input[type="password"],
+	input[type="search"],
+	input[type="number"],
+	input[type="tel"],
+	input[type="range"],
+	input[type="date"],
+	input[type="month"],
+	input[type="week"],
+	input[type="time"],
+	input[type="datetime"],
+	input[type="datetime-local"],
+	input[type="color"],
+	select, 
+	textarea 
+		margin-bottom: 45px !important
+		font-style: normal !important
+
+	@include placeholder
+		text-transform: uppercase
+		font:
+			family: $gotham-book	
+			style: normal
+			size: 14px
+		color: $color-dark
+
+
+#contact-form
+	input,
+	textarea
+		padding-left: 0 !important
+
+	.btn
+		min-width: 180px
+		text-align: center
+		padding:
+			top: 18px
+			bottom: 18px

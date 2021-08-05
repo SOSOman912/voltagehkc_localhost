@@ -1,0 +1,10 @@
+name: Corevalues
+form: $/jack/voltage/models/corevalues/fields.yaml
+modelClass: Jack\Voltage\Models\Corevalues
+defaultRedirect: jack/voltage/corevalues
+create:
+    redirect: 'jack/voltage/corevalues/update/:id'
+    redirectClose: jack/voltage/corevalues
+update:
+    redirect: jack/voltage/corevalues
+    redirectClose: jack/voltage/corevalues

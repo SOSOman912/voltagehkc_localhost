@@ -1,0 +1,92 @@
+==
+<?php
+use Jack\Voltage\Models\Counters;
+
+function onEnd(){
+
+    
+   // $theid =  $this->param('slug');
+    $this['counters'] = Counters::where('id','>','0')->get();
+    
+    
+}
+?>
+==
+<div class="container mpt80">
+                <div class="row">
+                    
+                    <div class="col-sm-3">
+                        
+                        <div class="counter">
+                            
+                            <div class="counter-value" data-value="{{counters[0].number}}">
+                            
+                             
+                            
+                            </div>
+                            
+                                <span style='font-family: "Gotham Black", serif;
+                                font-size: 72px;
+                                color: #1e1a19;
+                                margin-bottom: 45px;
+                                position: relative;
+                                display: inline-block;'>K</span>
+                            
+                            <div class="counter-details">
+                                <h4>{{counters[0].details}}</h4>
+                            </div><!-- counter-details -->
+                            
+                        </div><!-- counter -->
+                    
+                    </div><!-- col -->
+
+                    <div class="col-sm-3">
+                        
+                        <div class="counter">
+                            
+                            <div class="counter-value more" data-value="{{counters[1].number}}">+</div>
+                            
+                            <div class="counter-details">
+                                <h4>{{counters[1].details}}</h4>
+                            </div><!-- counter-details -->
+                            
+                        </div><!-- counter -->
+                    
+                    </div><!-- col -->
+
+                    <div class="col-sm-3">
+                        
+                        <div class="counter">
+                            
+                            <div class="counter-value" data-value="{{counters[2].number}}"></div>
+                            
+                            <span style='font-family: "Gotham Black", serif;
+    font-size: 72px;
+    color: #1e1a19;
+    margin-bottom: 45px;
+    position: relative;
+    display: inline-block;'>M</span>
+                            
+                            <div class="counter-details">
+                                <h4>{{counters[2].details}}</h4>
+                            </div><!-- counter-details -->
+                            
+                        </div><!-- counter -->
+                    
+                    </div><!-- col -->
+
+                    <div class="col-sm-3">
+                        
+                        <div class="counter">
+                            
+                            <div class="counter-value more" data-value="{{counters[3].number}}">+</div>
+                            
+                            <div class="counter-details">
+                                <h4>{{counters[3].details}}</h4>
+                            </div><!-- counter-details -->
+                            
+                        </div><!-- counter -->
+                    
+                    </div><!-- col -->
+                </div>
+            </div>

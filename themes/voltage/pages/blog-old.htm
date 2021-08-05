@@ -1,0 +1,110 @@
+title = "blog-old"
+url = "/blog-old"
+is_hidden = 0
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+postsPerPage = 10
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = "blog-list"
+postPage = "blog-detail"
+==
+{% partial 'header2' %}
+
+        <div id="page-content">
+            <div class="clearfix space120 hidden-991"></div>
+            <div class="clearfix space60 hidden-991"></div>
+
+            <div class=" hidden-only-480 clearfix space30 showin-991"></div>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        
+                        <ol class="breadcrumb custom-breadcrumbs">
+                            <li><a href="#">Home</a></li>
+                            <li class="active">Stories</li>
+                        </ol>
+
+                    </div>
+                </div>
+            </div>
+            
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        
+                        <div class="headline mb-60">
+                            <h3>COMING SOON!</h3>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="container" style="display:none;">
+                <div class="row">
+                    <div class="col-sm-9">
+                    
+                    
+{% set posts = blogPosts.posts %}
+
+                        {% for post in posts %}
+                        <div class="blog-article">
+
+                            <div class="blog-article-thumbnail"> 
+                            
+                               <a href="{{ post.url }}">
+                                {% for pic in post.featured_images %}
+                                 
+                                       <img src="{{ pic.path }}" >
+                              
+                                {% endfor %}
+                               </a>
+
+                            </div><!-- blog-article-thumbnail -->
+                            
+                            <div class="blog-article-details">
+                                
+                                <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+                                
+                                <p>
+                                    <span class="text-blue">{{ post.published_at|date('M d, Y') }}</span>
+                                    <!-- &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</span>in <a href="#">Design</a> -->
+                                </p>
+                                                                   
+                            </div><!-- blog-article-details -->
+                            
+                            <p>{{ post.summary|raw }}.</p>
+                            
+                        </div><!-- blog-article -->
+                        {% endfor %}
+                        
+                        
+                        {% if posts.lastPage > 1 %}
+                            <ul class="pagination">
+                                {% if posts.currentPage > 1 %}
+                                    <li><a href="{{ this.page.baseFileName|page({ (pageParam): (posts.currentPage-1) }) }}">&larr; Prev</a></li>
+                                {% endif %}
+                        
+                                {% for page in 1..posts.lastPage %}
+                                    <li class="{{ posts.currentPage == page ? 'active' : null }}">
+                                        <a href="{{ this.page.baseFileName|page({ (pageParam): page }) }}">{{ page }}</a>
+                                    </li>
+                                {% endfor %}
+                        
+                                {% if posts.lastPage > posts.currentPage %}
+                                    <li><a href="{{ this.page.baseFileName|page({ (pageParam): (posts.currentPage+1) }) }}">Next &rarr;</a></li>
+                                {% endif %}
+                            </ul>
+                        {% endif %}
+
+                        <div class="clearfix space120 hidden-only-480"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- / PAGE CONTENT -->
+</body>
+{% partial 'footer' %}

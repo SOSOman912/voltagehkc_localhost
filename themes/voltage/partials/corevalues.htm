@@ -1,0 +1,42 @@
+==
+<div class='corevalue'>
+    <div class="owl-carousel custom-content custom-voltage-content">
+    
+    {% for values in corevalues %}
+        <section id="section-2">
+    
+                        <div class="slider-left-side">
+                        
+                            <div class="clearfix space60 hidden-1200"></div>
+                            <span class="meta-subtitle" data-wow-duration="1s" data-wow-delay="0s">our core values</span>
+                            <h1 class="text-uppercase" data-wow-duration="1s" data-wow-delay="0s">{{values.title}}</h1>
+                            
+                            <p class="" data-wow-duration="1s" data-wow-delay="0s">{{values.content}}</p>
+                            
+                            <br>
+                            
+                            <a class="btn btn-default btn-min-width wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s" href="">Learn More</a>
+    
+                        </div><!-- slider-left-side -->
+                        
+                        <div class="slider-right-side">
+                                
+                            <img alt="" src="{{ 'home' | page }}/storage/app/media/{{values.photo}}">
+                        </div> <!-- slider-right-side -->       
+    
+    
+                      
+        </section>
+        {% endfor %}
+    
+         
+    </div>
+    <div class='customnav mobileonly theleft'>
+                                <a class='jleft'><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+                             
+    </div>
+    <div class='customnav mobileonly theright'>
+                            
+                                <a class='jright'><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+    </div>
+</div>

@@ -1,0 +1,57 @@
+body
+	color: $color-dark
+	font:
+		family: $gotham-book
+
+#scroll-up
+	background: darken( $color-bg-dark, 10%)
+	color: white !important
+	&:hover,
+	&:focus
+		background: $color-primary
+
+// helper-background-color
+.bg-white
+	background-color: white
+	&-border
+		background-color: white
+		border: 1px solid $color-dark
+		border-left-width: 20px
+
+		@include max767
+			border-left-width: 1px
+
+.container-offset
+	&.bg-white-border
+		padding:
+			left: 15px !important
+			right: 30px !important
+			top: 30px !important
+			bottom: 30px !important
+		@include max767
+			padding: 30px !important
+
+.wrapper-strip
+	position: relative
+	padding: 90px 0
+	&:before
+		content: ''
+		position: absolute
+		left: 0
+		top: 0
+		width: 100%
+		height: 400px
+		background:
+			image: url('../images/bg-strip.png')
+			position: 0 0
+
+	.container-offset
+		padding: 60px
+		position: relative
+		z-index: 22
+		@include max991
+			padding: 30px
+			max-width: 90%
+			margin:
+				left: auto
+				right: auto

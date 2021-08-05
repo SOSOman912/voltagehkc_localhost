@@ -1,0 +1,87 @@
+/*
+Icon classes can be used entirely standalone. They are named after their original file names.
+
+Example usage in HTML:
+
+`display: block` sprite:
+<div class="icon-home"></div>
+
+To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+
+// CSS
+.icon {
+  display: inline-block;
+}
+
+// HTML
+<i class="icon icon-home"></i>
+*/
+.icon{
+  display: inline-block;
+}
+.icon-arrow-right-big {
+  background-image: url(../images/images-sprite.png);
+  background-position: 0px -156px;
+  width: 73px;
+  height: 45px;
+}
+.icon-arrow-right-normal {
+  background-image: url(../images/images-sprite.png);
+  background-position: -164px -120px;
+  width: 45px;
+  height: 28px;
+}
+.icon-arrow-right-smaller {
+  background-image: url(../images/images-sprite.png);
+  background-position: -209px -93px;
+  width: 24px;
+  height: 14px;
+}
+.icon-arrow-right {
+  background-image: url(../images/images-sprite.png);
+  background-position: -114px -123px;
+  width: 17px;
+  height: 33px;
+}
+.icon-col-campaign {
+  background-image: url(../images/images-sprite.png);
+  background-position: -164px -52px;
+  width: 45px;
+  height: 68px;
+}
+.icon-event-management {
+  background-image: url(../images/images-sprite.png);
+  background-position: 0px -69px;
+  width: 66px;
+  height: 87px;
+}
+.icon-map-marker {
+  background-image: url(../images/images-sprite.png);
+  background-position: -209px -52px;
+  width: 25px;
+  height: 41px;
+}
+.icon-media-relationship {
+  background-image: url(../images/images-sprite.png);
+  background-position: -114px 0px;
+  width: 50px;
+  height: 83px;
+}
+.icon-plus {
+  background-image: url(../images/images-sprite.png);
+  background-position: -114px -83px;
+  width: 40px;
+  height: 40px;
+}
+.icon-quote {
+  background-image: url(../images/images-sprite.png);
+  background-position: 0px 0px;
+  width: 114px;
+  height: 69px;
+}
+.icon-socialmedia-strategy {
+  background-image: url(../images/images-sprite.png);
+  background-position: -164px 0px;
+  width: 71px;
+  height: 52px;
+}

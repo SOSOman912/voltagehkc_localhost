@@ -1,0 +1,11 @@
+columns:
+    id:
+        label: id
+        type: number
+        sortable: false
+    title:
+        label: title
+        type: text
+    created_at:
+        label: created_at
+        type: datetime

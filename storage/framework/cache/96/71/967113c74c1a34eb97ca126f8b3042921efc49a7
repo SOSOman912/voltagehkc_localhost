@@ -1,0 +1,72 @@
+1628090830a:1:{s:14:"homeslider.htm";a:6:{s:8:"fileName";s:14:"homeslider.htm";s:7:"content";s:1711:"==
+<div class="rev_slider_wrapper voltage_slider_wrapper">
+                <div class="rev_slider" data-version="5.0">
+                    <ul>
+                    {% for slide in homesliders %}
+                       <li data-transition="slideup">
+                            <img src="{{ 'home' | page }}/storage/app/media/{{slide.photo}}" alt="">
+
+                            <div class="tp-caption subtitle"
+                                 data-x="left"
+                                 data-y="320"
+                                 data-speed="700"
+                                 data-start="800"
+                                 data-hoffset="00"
+                                 data-transform_in="y:100px;opacity:0;s:1000;"
+                                 data-transform_out="y:0px;opacity:0;s:400;">
+                                 {{slide.text|raw}}
+                            </div>
+
+                          
+                            <div class="tp-caption"
+                                 data-x="left"
+                                 data-y="470"
+                                 data-speed="700"
+                                 data-start="1200"
+                                 data-hoffset="0"
+                                 data-transform_in="y:100px;opacity:0;s:1000;"
+                                 data-transform_out="y:0px;opacity:0;s:400;">
+                                 <a class="btn btn-default btn-min-width text-uppercase" href="{{ 'contact' | page }}">Connect now</a>
+                            </div>
+
+                          
+                        </li>
+                      {% endfor %}
+                    </ul>
+                </div>
+            </div>";s:5:"mtime";i:1628069435;s:6:"markup";s:1708:"<div class="rev_slider_wrapper voltage_slider_wrapper">
+                <div class="rev_slider" data-version="5.0">
+                    <ul>
+                    {% for slide in homesliders %}
+                       <li data-transition="slideup">
+                            <img src="{{ 'home' | page }}/storage/app/media/{{slide.photo}}" alt="">
+
+                            <div class="tp-caption subtitle"
+                                 data-x="left"
+                                 data-y="320"
+                                 data-speed="700"
+                                 data-start="800"
+                                 data-hoffset="00"
+                                 data-transform_in="y:100px;opacity:0;s:1000;"
+                                 data-transform_out="y:0px;opacity:0;s:400;">
+                                 {{slide.text|raw}}
+                            </div>
+
+                          
+                            <div class="tp-caption"
+                                 data-x="left"
+                                 data-y="470"
+                                 data-speed="700"
+                                 data-start="1200"
+                                 data-hoffset="0"
+                                 data-transform_in="y:100px;opacity:0;s:1000;"
+                                 data-transform_out="y:0px;opacity:0;s:400;">
+                                 <a class="btn btn-default btn-min-width text-uppercase" href="{{ 'contact' | page }}">Connect now</a>
+                            </div>
+
+                          
+                        </li>
+                      {% endfor %}
+                    </ul>
+                </div>
+            </div>";s:4:"code";N;s:17:"_PARSER_ERROR_INI";s:0:"";}}

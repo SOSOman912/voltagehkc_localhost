@@ -1,0 +1,20 @@
+fields:
+    image:
+        label: Image
+        oc.commentPosition: ''
+        span: auto
+        type: text
+    logo:
+        label: 'Client Logo (125px*125px)'
+        oc.commentPosition: ''
+        mode: file
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload
+    feature:
+        label: 'Featured?'
+        span: auto
+        type: switch

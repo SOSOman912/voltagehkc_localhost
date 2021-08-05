@@ -1,0 +1,10 @@
+name: Clients
+form: $/jack/voltage/models/client/fields.yaml
+modelClass: Jack\Voltage\Models\Client
+defaultRedirect: jack/voltage/clients
+create:
+    redirect: 'jack/voltage/clients/update/:id'
+    redirectClose: jack/voltage/clients
+update:
+    redirect: jack/voltage/clients
+    redirectClose: jack/voltage/clients

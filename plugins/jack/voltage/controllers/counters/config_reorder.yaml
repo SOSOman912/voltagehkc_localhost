@@ -1,0 +1,4 @@
+title: Counters
+modelClass: Jack\Voltage\Models\Counters
+toolbar:
+    buttons: reorder_toolbar

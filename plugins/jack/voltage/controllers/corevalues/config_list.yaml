@@ -1,0 +1,11 @@
+list: $/jack/voltage/models/corevalues/columns.yaml
+modelClass: Jack\Voltage\Models\Corevalues
+title: Corevalues
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'jack/voltage/corevalues/update/:id'

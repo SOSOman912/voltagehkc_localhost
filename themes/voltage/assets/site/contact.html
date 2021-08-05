@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<!--[if IE 7]><html class="ie ie7"><![endif]--><!--[if IE 8]><html class="ie ie8"><![endif]--><!--[if IE 9]><html class="ie ie9"><![endif]--><!--[if !(IE 7) & !(IE 8) & !(IE 9)]><!--><html lang="en"><!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+  
+    <title>Voltage PR - Contact</title>  
+
+    include "partial-css.html"
+</head>
+<body>
+    
+    <div id="main-container">
+
+        include "site-header.html"
+
+        <div id="page-content">
+
+            <div class="parallax nospace-bottom" data-stellar-background-ratio="0.2" id="page-header" style="background-image: url(assets/images/page-bg/contact.jpg);" >  
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            
+                            <h2 class="page-header-title">Contact</h2>
+                            
+                        </div><!-- col -->
+                    </div><!-- row -->
+                </div><!-- container -->    
+            </div><!-- page-header -->
+
+            <div class="wrapper-strip">
+                <div class="container-offset container bg-white">
+                    
+                    <div class="row">    
+                        <div class="col-sm-7">
+                            <h3 class="text-uppercase">Leave Us a Message</h3>
+                            <div class="clearfix space15"></div>
+                            <p>Don't be afraid to tell us about your project's timeline and budget. We're straightforward with our abilities & pricing, and knowing where you're coming from helps us hit the target.</p>
+
+                            <form action="assets/php/send.php" method="post" name="contact-form" id="contact-form" class="clearfix" novalidate="novalidate">
+                                <fieldset>
+                                    
+                                    <div id="alert-area"></div>
+                                            
+                                    <input type="text" placeholder="name" name="name" id="name" class="col-xs-12">
+                                    
+                                    <input type="email" placeholder="e-mail" name="email" id="email" class="col-xs-12">
+                                    
+                                    <input type="text" placeholder="subject" name="subject" id="subject" class="col-xs-12">
+
+                                    <textarea placeholder="message" cols="25" rows="5" name="message" id="message" class="col-xs-12"></textarea>
+                                
+                                    <button value="" name="submit" type="submit" class="btn btn-default" id="submit">Send</button>
+                                    
+                                </fieldset>
+                            </form>
+                        </div>
+
+                        <div class="col-sm-4 col-sm-offset-1">
+                            <div class="clearfix space30"></div>
+                            <div class="widget widget-contact">
+                                <h6 class="widget-title">Address</h6>
+
+                                <ul>
+                                    <li>Unit 3, 15/F, Wayson Commercial Building 28 Connaught Road West <br>Sheung Wan</li>
+                                </ul>
+                            </div><!-- / .widget-contact -->
+
+                            <div class="widget widget-contact">
+                                <h6 class="widget-title">Phone Number</h6>
+
+                                <ul>
+                                    <li>+852 9663 3023</li>
+                                </ul>
+                            </div><!-- / .widget-contact -->
+
+                            <div class="widget widget-contact">
+                                <h6 class="widget-title">Email</h6>
+
+                                <ul>
+                                    <li>
+                                        <a href="mailto:hello@voltage-pr.com">hello@voltage-pr.com</a>
+                                    </li>
+                                </ul>
+                            </div><!-- / .widget-contact -->                                
+                            
+                        </div>
+                    </div>
+
+                </div>
+            </div><!-- / .wrapper-strip -->
+
+            <div class="map nospace-bottom" data-zoom="13" data-address="Los Altos Hills" data-address-details="Office"></div>
+
+        </div><!-- / PAGE CONTENT -->
+
+        include "site-footer.html"
+    
+    </div><!-- / MAIN CONTAINER -->
+
+    <!-- GO TOP -->
+    <a id="scroll-up"><i class="fa fa-chevron-up"></i></a>
+
+    include "partial-js.html"
+</body>
+</html>
+        

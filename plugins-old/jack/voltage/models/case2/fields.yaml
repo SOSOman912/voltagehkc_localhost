@@ -1,0 +1,97 @@
+fields:
+    title:
+        label: Title
+        oc.commentPosition: ''
+        span: auto
+        type: text
+    prvalue:
+        label: 'PR Value'
+        oc.commentPosition: ''
+        span: auto
+        type: number
+    leader:
+        label: 'Number of Leader attended'
+        oc.commentPosition: ''
+        span: auto
+        type: number
+    coverage:
+        label: 'No of coverage'
+        oc.commentPosition: ''
+        span: auto
+        type: number
+    testimonialname:
+        label: 'Testimonial Name'
+        oc.commentPosition: ''
+        span: auto
+        type: text
+    testimonialtitle:
+        label: 'Testimonial Title'
+        oc.commentPosition: ''
+        span: auto
+        type: text
+    testimonial:
+        label: Testmonial
+        size: ''
+        oc.commentPosition: ''
+        span: auto
+        type: textarea
+    overview:
+        label: Overview
+        size: ''
+        oc.commentPosition: ''
+        span: auto
+        type: textarea
+    strategy:
+        label: Strategy
+        size: ''
+        oc.commentPosition: ''
+        span: auto
+        type: textarea
+    slug:
+        label: Slug
+        oc.commentPosition: ''
+        span: auto
+        context:
+            - update
+        type: text
+    result:
+        label: Result
+        size: ''
+        oc.commentPosition: ''
+        span: auto
+        type: textarea
+    image1:
+        label: 'Hero Images (1366*496px)'
+        oc.commentPosition: ''
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload
+    image2:
+        label: 'Media Images (781*377px)'
+        oc.commentPosition: ''
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload
+    image3:
+        label: 'Thumbnail Images (800*800px)'
+        oc.commentPosition: ''
+        mode: image
+        useCaption: true
+        thumbOptions:
+            mode: crop
+            extension: auto
+        span: auto
+        type: fileupload
+    categories:
+        label: Category
+        span: auto
+        type: relation
+        nameFrom: title

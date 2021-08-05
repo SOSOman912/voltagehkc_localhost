@@ -1,0 +1,15 @@
+columns:
+    id:
+        label: id
+        type: number
+        sortable: false
+    text:
+        label: text
+        type: text
+        sortable: false
+    photo:
+        label: photo
+        type: text
+    created_at:
+        label: created_at
+        type: datetime

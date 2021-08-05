@@ -1,0 +1,10 @@
+name: Socialmedias
+form: $/jack/voltage/models/socialmedia/fields.yaml
+modelClass: Jack\Voltage\Models\Socialmedia
+defaultRedirect: jack/voltage/socialmedias
+create:
+    redirect: 'jack/voltage/socialmedias/update/:id'
+    redirectClose: jack/voltage/socialmedias
+update:
+    redirect: jack/voltage/socialmedias
+    redirectClose: jack/voltage/socialmedias
