@@ -274,4 +274,9 @@
   'RainLab\\Builder\\Classes\\PermissionsModel' => 'plugins/rainlab/builder/classes/PermissionsModel.php',
   'backend\\Controllers\\auth' => 'modules/backend/controllers/auth.php',
   'backend\\Controllers\\index' => 'modules/backend/controllers/index.php',
+  'rainlab\\blog\\Controllers\\posts' => 'plugins/rainlab/blog/controllers/posts.php',
+  'rainlab\\blog\\Controllers\\categories' => 'plugins/rainlab/blog/controllers/categories.php',
+  'cms\\Controllers\\index' => 'modules/cms/controllers/index.php',
+  'system\\Controllers\\settings' => 'modules/system/controllers/settings.php',
+  'system\\Controllers\\updates' => 'modules/system/controllers/updates.php',
 );

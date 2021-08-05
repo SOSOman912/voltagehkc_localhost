@@ -1,0 +1,160 @@
+1628163342a:1:{s:8:"head.htm";a:6:{s:8:"fileName";s:8:"head.htm";s:7:"content";s:3672:"==
+<!-- I am a banner  --><!DOCTYPE html>
+<!--[if IE 7]><html class="ie ie7"><![endif]--><!--[if IE 8]><html class="ie ie8"><![endif]--><!--[if IE 9]><html class="ie ie9"><![endif]--><!--[if !(IE 7) & !(IE 8) & !(IE 9)]><!--><html lang="en"><!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name=”robots” content="index, follow">
+    
+    {% if (this.page.url=='/') %}
+	<title>Voltage PR - A result-driven Hong Kong PR Agency</title>
+				<meta name="description" content="A Hong Kong-based PR, digital and events marketing agency, specialized in delivering messages that resonate.">
+	
+	{% else %}
+	<title>{{ this.page.title }} - Voltage PR</title>
+	
+	{% endif %}
+
+    <!-- FAVICON AND APPLE TOUCH -->    
+    <link rel="shortcut icon" href="{{ 'assets/ff3.png'|theme }}">
+
+
+    <!-- FONTS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:300,300i,400,400i,700,700i"> 
+<!-- 1. Add latest jQuery and fancyBox files -->
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" />
+
+    <!-- BOOTSTRAP CSS -->
+    <link rel="stylesheet" href="{{ 'assets/bootstrap/css/bootstrap.min.css'|theme }}"> 
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="{{ 'assets/fonts/fontawesome/css/font-awesome.min.css'|theme }}">
+
+    <!-- BERLIN ICONS -->
+    <link rel="stylesheet" href="{{ 'assets/fonts/berlin-icons/css/berlin-icons.css'|theme }}"> 
+
+    <!-- FANCYBOX -->
+    <link rel="stylesheet" href="{{ 'assets/plugins/fancybox/jquery.fancybox.css'|theme }}">
+
+    <!-- REVOLUTION SLIDER -->
+    <link rel="stylesheet" href="{{ 'assets/plugins/revolutionslider/css/settings.css'|theme }}">
+    <link rel="stylesheet" href="{{ 'assets/plugins/revolutionslider/css/layers.css'|theme }}">
+    <link rel="stylesheet" href="{{ 'assets/plugins/revolutionslider/css/navigation.css'|theme }}">
+
+    <!-- OWL Carousel -->
+    <link rel="stylesheet" href="{{ 'assets/plugins/owl-carousel/owl.carousel.css'|theme }}">
+    <link rel="stylesheet" href="{{ 'assets/plugins/owl-carousel/owl.transitions.css'|theme }}">
+
+    <!-- YOUTUBE PLAYER -->
+    <link rel="stylesheet" href="{{ 'assets/plugins/ytplayer/css/jquery.mb.YTPlayer.min.css'|theme }}">
+
+    <!-- ANIMATIONS -->
+    <link rel="stylesheet" href="{{ 'assets/plugins/animations/animate.min.css'|theme }}">
+    <link rel="stylesheet" href="{{ 'assets/css/animate.css'|theme }}">
+    <!-- CUSTOM & PAGES STYLE -->
+    <link rel="stylesheet" href="{{ 'assets/css/custom.css?v=20200506'|theme }}">
+    <link rel="stylesheet" href="{{ 'assets/css/pages-style.css'|theme }}">
+    <link rel="stylesheet" href="{{ 'assets/css/custom2.css'|theme }}">
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-77369242-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-77369242-1');
+</script>
+
+    <!-- CUSTOM STYLE FOR VOLTAGE PR STATIC -->
+    <link rel="stylesheet" href="{{ 'assets/css/installing-fonts.css'|theme }}">
+    <link rel="stylesheet" href="{{ 'assets/css/images-sprite.css'|theme }}">
+    <link rel="stylesheet" href="{{ 'assets/css/app.css?v=20200427'|theme }}">
+    
+    <meta name="google-site-verification" content="0m8_qpqYQzsbEzAo8OAkYiJ3HmGs2zBT8HdsdEvurC0" />
+</head>";s:5:"mtime";i:1628155984;s:6:"markup";s:3669:"<!-- I am a banner  --><!DOCTYPE html>
+<!--[if IE 7]><html class="ie ie7"><![endif]--><!--[if IE 8]><html class="ie ie8"><![endif]--><!--[if IE 9]><html class="ie ie9"><![endif]--><!--[if !(IE 7) & !(IE 8) & !(IE 9)]><!--><html lang="en"><!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name=”robots” content="index, follow">
+    
+    {% if (this.page.url=='/') %}
+	<title>Voltage PR - A result-driven Hong Kong PR Agency</title>
+				<meta name="description" content="A Hong Kong-based PR, digital and events marketing agency, specialized in delivering messages that resonate.">
+	
+	{% else %}
+	<title>{{ this.page.title }} - Voltage PR</title>
+	
+	{% endif %}
+
+    <!-- FAVICON AND APPLE TOUCH -->    
+    <link rel="shortcut icon" href="{{ 'assets/ff3.png'|theme }}">
+
+
+    <!-- FONTS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:300,300i,400,400i,700,700i"> 
+<!-- 1. Add latest jQuery and fancyBox files -->
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" />
+
+    <!-- BOOTSTRAP CSS -->
+    <link rel="stylesheet" href="{{ 'assets/bootstrap/css/bootstrap.min.css'|theme }}"> 
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="{{ 'assets/fonts/fontawesome/css/font-awesome.min.css'|theme }}">
+
+    <!-- BERLIN ICONS -->
+    <link rel="stylesheet" href="{{ 'assets/fonts/berlin-icons/css/berlin-icons.css'|theme }}"> 
+
+    <!-- FANCYBOX -->
+    <link rel="stylesheet" href="{{ 'assets/plugins/fancybox/jquery.fancybox.css'|theme }}">
+
+    <!-- REVOLUTION SLIDER -->
+    <link rel="stylesheet" href="{{ 'assets/plugins/revolutionslider/css/settings.css'|theme }}">
+    <link rel="stylesheet" href="{{ 'assets/plugins/revolutionslider/css/layers.css'|theme }}">
+    <link rel="stylesheet" href="{{ 'assets/plugins/revolutionslider/css/navigation.css'|theme }}">
+
+    <!-- OWL Carousel -->
+    <link rel="stylesheet" href="{{ 'assets/plugins/owl-carousel/owl.carousel.css'|theme }}">
+    <link rel="stylesheet" href="{{ 'assets/plugins/owl-carousel/owl.transitions.css'|theme }}">
+
+    <!-- YOUTUBE PLAYER -->
+    <link rel="stylesheet" href="{{ 'assets/plugins/ytplayer/css/jquery.mb.YTPlayer.min.css'|theme }}">
+
+    <!-- ANIMATIONS -->
+    <link rel="stylesheet" href="{{ 'assets/plugins/animations/animate.min.css'|theme }}">
+    <link rel="stylesheet" href="{{ 'assets/css/animate.css'|theme }}">
+    <!-- CUSTOM & PAGES STYLE -->
+    <link rel="stylesheet" href="{{ 'assets/css/custom.css?v=20200506'|theme }}">
+    <link rel="stylesheet" href="{{ 'assets/css/pages-style.css'|theme }}">
+    <link rel="stylesheet" href="{{ 'assets/css/custom2.css'|theme }}">
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-77369242-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-77369242-1');
+</script>
+
+    <!-- CUSTOM STYLE FOR VOLTAGE PR STATIC -->
+    <link rel="stylesheet" href="{{ 'assets/css/installing-fonts.css'|theme }}">
+    <link rel="stylesheet" href="{{ 'assets/css/images-sprite.css'|theme }}">
+    <link rel="stylesheet" href="{{ 'assets/css/app.css?v=20200427'|theme }}">
+    
+    <meta name="google-site-verification" content="0m8_qpqYQzsbEzAo8OAkYiJ3HmGs2zBT8HdsdEvurC0" />
+</head>";s:4:"code";N;s:17:"_PARSER_ERROR_INI";s:0:"";}}

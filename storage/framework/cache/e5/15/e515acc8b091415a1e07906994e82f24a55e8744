@@ -1,0 +1,283 @@
+1628163342a:1:{s:14:"case-study.htm";a:8:{s:8:"fileName";s:14:"case-study.htm";s:7:"content";s:5485:"title = "case study"
+url = "/case-study"
+is_hidden = 0
+==
+<?php
+use Jack\Voltage\Models\Case2;
+use Jack\Voltage\Models\Category;
+function onEnd(){
+
+    
+   // $theid =  $this->param('slug');
+    
+    $this['categories'] = Category::where('id','>',0)->orderBy('created_at','desc')->get();
+    $this['cases'] = Case2::where('id','>',0)->orderBy('created_at','desc')->get();
+    
+    if (isset($_GET['thecat']))
+    $this['theclick'] = $_GET['thecat'];
+    
+        
+}
+?>
+==
+{% partial 'header2' %}
+        <div id="page-content">
+            <div class="clearfix space120 hidden-991"></div>
+            <div class="clearfix space60 hidden-991"></div>
+
+            <div class="clearfix space30 showin-991"></div>
+            
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+
+                        <div class="headline mb-60">
+                            <h3>Case Study</h3>    
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        
+                        <ul class="filter text-center">
+                            <li>
+                                <a class="active" href="#" data-filter="*">All</a>
+                            </li>
+                            {% for category in categories %}
+                                <li>
+                                    <a href="#" class='thecat{{ category.id }}' data-filter=".cat{{ category.id }}">{{ category.title }}</a>
+                                </li>                            
+                            {% endfor %}
+
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+
+                        <div class="casestudy-list isotope col-3 gutter clearfix">
+
+                            {% for case in cases %}
+
+                            <div class="isotope-item
+                            
+                                                {% if case.categories.count %} 
+                                                    {% for category in case.categories %}
+                                                        cat{{ category.id }}{% if not loop.last %}  {% endif %}
+                                                    {% endfor %}
+                                                {% endif %}
+                            
+                            ">
+
+                                <div class="portfolio-item">
+                            
+                                    <a href="{{ 'home' | page }}/portfolio-detail/{{ case.slug }}" class="portfolio-item-thumbnail">
+                                            
+                                     
+                                        {% for pic in case.image3 %}
+                                      
+                                               <img src="{{ pic.path }}" >
+                                         
+                                        {% endfor %}
+                                        
+                                        <div class="portfolio-item-hover">
+                                            
+                                            <span class="zoom-action">+</span>
+
+                                            <div class="portfolio-item-description">
+                                                        
+                                                <h4>{{ case.title }}</h4>
+                                                
+                                                <h6>
+                                                {% if case.categories.count %} 
+                                                    {% for category in case.categories %}
+                                                        {{ category.title }}{% if not loop.last %}, {% endif %}
+                                                    {% endfor %}
+                                                {% endif %}
+                                                
+                                                </h6>
+                                                
+                                            </div><!-- portfolio-item-description -->
+                                            
+                                        </div><!-- portfolio-item-hover -->
+                                        
+                                    </a><!-- portfolio-item-thumbnail -->
+                                    
+                                </div><!-- portfolio-item -->
+                            
+                            </div><!-- isotope-item -->
+                            
+                            {% endfor %}
+
+                           
+                            
+                        </div><!-- / .gutter .isotope .col-3 -->
+                        <div class="loading"></div>
+                        <div class="loadmore"></div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- / PAGE CONTENT -->
+</body>
+
+
+{% partial 'footer' %}
+
+{% if theclick %}
+<script>
+    (function($) {
+         setTimeout(function(){ 
+          
+            $('.{{ theclick }}').click();
+         }, 300);
+        
+    })(jQuery);
+</script>
+{% endif %}";s:5:"mtime";i:1628154936;s:6:"markup";s:5013:"{% partial 'header2' %}
+        <div id="page-content">
+            <div class="clearfix space120 hidden-991"></div>
+            <div class="clearfix space60 hidden-991"></div>
+
+            <div class="clearfix space30 showin-991"></div>
+            
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+
+                        <div class="headline mb-60">
+                            <h3>Case Study</h3>    
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        
+                        <ul class="filter text-center">
+                            <li>
+                                <a class="active" href="#" data-filter="*">All</a>
+                            </li>
+                            {% for category in categories %}
+                                <li>
+                                    <a href="#" class='thecat{{ category.id }}' data-filter=".cat{{ category.id }}">{{ category.title }}</a>
+                                </li>                            
+                            {% endfor %}
+
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+
+                        <div class="casestudy-list isotope col-3 gutter clearfix">
+
+                            {% for case in cases %}
+
+                            <div class="isotope-item
+                            
+                                                {% if case.categories.count %} 
+                                                    {% for category in case.categories %}
+                                                        cat{{ category.id }}{% if not loop.last %}  {% endif %}
+                                                    {% endfor %}
+                                                {% endif %}
+                            
+                            ">
+
+                                <div class="portfolio-item">
+                            
+                                    <a href="{{ 'home' | page }}/portfolio-detail/{{ case.slug }}" class="portfolio-item-thumbnail">
+                                            
+                                     
+                                        {% for pic in case.image3 %}
+                                      
+                                               <img src="{{ pic.path }}" >
+                                         
+                                        {% endfor %}
+                                        
+                                        <div class="portfolio-item-hover">
+                                            
+                                            <span class="zoom-action">+</span>
+
+                                            <div class="portfolio-item-description">
+                                                        
+                                                <h4>{{ case.title }}</h4>
+                                                
+                                                <h6>
+                                                {% if case.categories.count %} 
+                                                    {% for category in case.categories %}
+                                                        {{ category.title }}{% if not loop.last %}, {% endif %}
+                                                    {% endfor %}
+                                                {% endif %}
+                                                
+                                                </h6>
+                                                
+                                            </div><!-- portfolio-item-description -->
+                                            
+                                        </div><!-- portfolio-item-hover -->
+                                        
+                                    </a><!-- portfolio-item-thumbnail -->
+                                    
+                                </div><!-- portfolio-item -->
+                            
+                            </div><!-- isotope-item -->
+                            
+                            {% endfor %}
+
+                           
+                            
+                        </div><!-- / .gutter .isotope .col-3 -->
+                        <div class="loading"></div>
+                        <div class="loadmore"></div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- / PAGE CONTENT -->
+</body>
+
+
+{% partial 'footer' %}
+
+{% if theclick %}
+<script>
+    (function($) {
+         setTimeout(function(){ 
+          
+            $('.{{ theclick }}').click();
+         }, 300);
+        
+    })(jQuery);
+</script>
+{% endif %}";s:4:"code";s:401:"use Jack\Voltage\Models\Case2;
+use Jack\Voltage\Models\Category;
+function onEnd(){
+
+    
+   // $theid =  $this->param('slug');
+    
+    $this['categories'] = Category::where('id','>',0)->orderBy('created_at','desc')->get();
+    $this['cases'] = Case2::where('id','>',0)->orderBy('created_at','desc')->get();
+    
+    if (isset($_GET['thecat']))
+    $this['theclick'] = $_GET['thecat'];
+    
+        
+}";s:5:"title";s:10:"case study";s:3:"url";s:11:"/case-study";s:9:"is_hidden";s:1:"0";}}

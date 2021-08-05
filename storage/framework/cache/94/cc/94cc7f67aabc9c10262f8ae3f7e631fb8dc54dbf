@@ -1,0 +1,103 @@
+1628163342a:1:{s:11:"clients.htm";a:8:{s:8:"fileName";s:11:"clients.htm";s:7:"content";s:1721:"title = "clients"
+url = "/clients"
+is_hidden = 0
+==
+<?php
+use Jack\Voltage\Models\Client;
+
+function onEnd(){
+
+    
+   // $theid =  $this->param('slug');
+    
+    $this['clients'] = Client::where('id','>',0)->orderby('id','desc')->get();
+        
+}
+?>
+==
+{% partial 'header2' %}
+        <div id="page-content">
+            <div class="clearfix space120 hidden-991"></div>
+            <div class="clearfix space60 hidden-991"></div>
+
+            <div class="clearfix space30 showin-991"></div>
+            
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+
+                        <div class="headline mb-60">
+                            <h3>Clients</h3>    
+                
+                        </div>
+                    </div>
+                </div>
+            </div>                        
+                        
+            <div class="container clients">
+                <div class="row">
+                    <div class="col-sm-12">
+                            <ul class="happy-clients-list clearfix">
+                                {% for client in clients%}
+                                <li>
+                                    <img src="{{ 'home' | page }}/storage/app/media/{{ client.image }}"  alt="">
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                            
+                            <div class="clearfix space30"></div> <div class="clearfix space30"></div> <div class="clearfix space30"></div>
+                    </div>
+                </div>
+            </div>
+            
+            </div>
+            </body>
+
+{% partial 'footer' %}";s:5:"mtime";i:1628154936;s:6:"markup";s:1467:"{% partial 'header2' %}
+        <div id="page-content">
+            <div class="clearfix space120 hidden-991"></div>
+            <div class="clearfix space60 hidden-991"></div>
+
+            <div class="clearfix space30 showin-991"></div>
+            
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+
+                        <div class="headline mb-60">
+                            <h3>Clients</h3>    
+                
+                        </div>
+                    </div>
+                </div>
+            </div>                        
+                        
+            <div class="container clients">
+                <div class="row">
+                    <div class="col-sm-12">
+                            <ul class="happy-clients-list clearfix">
+                                {% for client in clients%}
+                                <li>
+                                    <img src="{{ 'home' | page }}/storage/app/media/{{ client.image }}"  alt="">
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                            
+                            <div class="clearfix space30"></div> <div class="clearfix space30"></div> <div class="clearfix space30"></div>
+                    </div>
+                </div>
+            </div>
+            
+            </div>
+            </body>
+
+{% partial 'footer' %}";s:4:"code";s:189:"use Jack\Voltage\Models\Client;
+
+function onEnd(){
+
+    
+   // $theid =  $this->param('slug');
+    
+    $this['clients'] = Client::where('id','>',0)->orderby('id','desc')->get();
+        
+}";s:5:"title";s:7:"clients";s:3:"url";s:8:"/clients";s:9:"is_hidden";s:1:"0";}}

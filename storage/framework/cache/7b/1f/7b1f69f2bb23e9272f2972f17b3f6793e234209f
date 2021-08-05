@@ -1,0 +1,13 @@
+1628163342a:1:{s:10:"robots.htm";a:8:{s:8:"fileName";s:10:"robots.htm";s:7:"content";s:145:"title = "robots"
+url = "/robots.txt"
+is_hidden = 0
+==
+User-agent: *
+Crawl-delay: 10
+Disallow: /backend/cms
+
+https://www.voltagehk.com/sitemap.xml";s:5:"mtime";i:1628154936;s:6:"markup";s:91:"User-agent: *
+Crawl-delay: 10
+Disallow: /backend/cms
+
+https://www.voltagehk.com/sitemap.xml";s:4:"code";N;s:5:"title";s:6:"robots";s:3:"url";s:11:"/robots.txt";s:9:"is_hidden";s:1:"0";}}

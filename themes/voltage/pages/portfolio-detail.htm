@@ -34,7 +34,7 @@ function onEnd(){
                                   
                             {% for pic in case.image1 %}
                              <section class="content-portfolio-detail-item">    
-                                 <img src="{{ pic.path }}" style='width:100%' >
+                                 <img src="{{ pic.path }}" style='width:100%; max-height: 75vh; object-fit:cover; object-position:center top' >
                              </section>            
                              {% endfor %}
             
@@ -106,6 +106,7 @@ function onEnd(){
                         <h4>Strategy</h4>
                         <p>{{ case.strategy }}</p>
                         <h4>Results</h4>
+                        <br>
                         <p>{{ case.result }}</p>
                         
                         
